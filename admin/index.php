@@ -1,4 +1,7 @@
-<?php include('./includes/header.php'); ?>
+<?php 
+    include('./config/databaseConfig.php');
+    include('./includes/header.php');
+?>
 
 <div class="container-fluid px-4">
     <h1 class="mt-4">DEV-BAY blogs</h1>
