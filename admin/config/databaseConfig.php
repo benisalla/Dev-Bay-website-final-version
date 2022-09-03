@@ -5,7 +5,7 @@ $host = "127.0.0.1:3333";
 $username = "root";
 $password = "";
 $database = "dev_bay";
-$connection = false;
+$connection = null;
 
 try{
     $connection = mysqli_connect($host,$username,$password,$database);

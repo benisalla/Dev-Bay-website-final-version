@@ -20,6 +20,8 @@
 
 <body class="main">
     <script src="//code.tidio.co/vk6fbhcuql50xchuyw2vy7gzt9hhxixo.js" async></script>
+    <!---------------------------------- message --------------------------------------->
+    <?php include('./tellMessage.php'); ?>
     
     <!----------------------------------- Spinner Start ----------------------------------->
     <div id="spinner"

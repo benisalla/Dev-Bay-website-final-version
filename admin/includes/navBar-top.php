@@ -20,7 +20,11 @@
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li>
+                    <form method="POST" action="../code.php" >
+                        <button type='submit' name='logout_btn' class="dropdown-item">Log Out</button>
+                    </form>
+                </li>
             </ul>
         </li>
     </ul>

@@ -3,11 +3,13 @@
     include('./admin/config/databaseConfig.php');
 
     if(isset($_POST['signup'])){
+
         $Fname = mysqli_real_escape_string($connection ,$_POST['firstName']);
         $Lname = mysqli_real_escape_string($connection ,$_POST['lastName']);
         $Email = mysqli_real_escape_string($connection ,$_POST['email']);
         $Pass = mysqli_real_escape_string($connection ,$_POST['pass']);
         $ConfPass = mysqli_real_escape_string($connection ,$_POST['conformPass']);
+
 
         if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' ||$ConfPass === ''){
             $_SESSION['message'] = 'Please fill in all the fields !!';
@@ -15,11 +17,47 @@
             exit(0);
         }
 
+
+        if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+            $_SESSION['message'] = "email is not in a proper form :)";
+            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
+            exit(0);
+        }
+
+
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$Fname)) {
+            $_SESSION['message'] = "first name should contain just letters and white-space :)";
+            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
+            exit(0);
+        }
+
+
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$Lname)) {
+            $_SESSION['message'] = "last name should contain just letters and white-space :)";
+            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
+            exit(0);
+        }
+
+
+        $upper = preg_match('@[A-Z]@', $Pass);
+        $lower = preg_match('@[a-z]@', $Pass);
+        $nbr    = preg_match('@[0-9]@', $Pass);
+        $specialChars = preg_match('@[^\w]@', $Pass);
+
+
+        if(!$upper || !$lower || !$nbr || !$specialChars || strlen($Pass) < 8) {
+            $_SESSION['message'] = "ths password is too weak :)";
+            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
+            exit(0);
+        }
+
+
         if($Pass !== $ConfPass){
                 $_SESSION['message'] = "you didn't conform password correctly :)";
                 echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
                 exit(0);
         }
+
 
         $isEmailExistQuery = "select '$Email' from users where email = '$Email'";
         $isEmailExistResult = mysqli_query($connection, $isEmailExistQuery);
