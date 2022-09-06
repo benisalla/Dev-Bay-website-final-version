@@ -10,6 +10,9 @@
         $Pass = mysqli_real_escape_string($connection ,$_POST['pass']);
         $ConfPass = mysqli_real_escape_string($connection ,$_POST['conformPass']);
 
+        $image = $_FILES['image']['name'];
+        $img = str_replace(' ','',explode('.',$image)[0].rand().".".pathinfo($image, PATHINFO_EXTENSION));
+
 
         if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' ||$ConfPass === ''){
             $_SESSION['message'] = 'Please fill in all the fields !!';
@@ -67,10 +70,11 @@
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }else{
-            $registringQuery = "insert into users (firstname,lastname,email,password) values ('$Fname','$Lname','$Email','$Pass')";
+            $registringQuery = "insert into users (firstname,lastname,image,email,password) values ('$Fname','$Lname','$img','$Email','$Pass')";
             $registringResult = mysqli_query($connection, $registringQuery);
 
             if( $registringResult ){
+                move_uploaded_file($_FILES['image']['tmp_name'],'../img/users/'.$img);
                 $_SESSION['message'] = "Registered Seccussfully :)";
                 echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
                 exit(0);

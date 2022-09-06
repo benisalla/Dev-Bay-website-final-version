@@ -23,9 +23,11 @@
                     <table class="table table-bordered text-center">
 
                         <thead>
+                            <th>Image</th>
                             <th>State</th>
                             <th>First Name</th>
-                            <th>Second Name</th>
+                            <th>Last Name</th>
+                            <th>Profession</th>
                             <th>Email</th>
                             <th>Role</th>
                             <th>ID</th>
@@ -40,9 +42,14 @@
                             <?php  if(mysqli_num_rows($Result) > 0): ?>
                                 <?php foreach($Result as $user): ?>
                                     <tr>
+                                        <td>
+                                            <img src="../img/users/<?=$user['image']?> "width="50px" height="50px"
+                                                style = "border-radius: 50%;">
+                                        </td>
                                         <td><?= $user['status']; ?></td>
                                         <td><?= $user['firstname']; ?></td>
                                         <td><?= $user['lastname']; ?></td>
+                                        <td><?= $user['profession']; ?></td>
                                         <td><?= $user['email'] ?></td>
                                         <td><?php 
                                             if($user['role_as'] == '1'){

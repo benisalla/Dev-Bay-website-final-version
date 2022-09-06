@@ -5,13 +5,17 @@
 
         $Fname = mysqli_real_escape_string($connection ,$_POST['fname']);
         $Lname = mysqli_real_escape_string($connection ,$_POST['lname']);
+        $profession = mysqli_real_escape_string($connection ,$_POST['profession']);
         $Email = mysqli_real_escape_string($connection ,$_POST['email']);
         $Pass = mysqli_real_escape_string($connection ,$_POST['password']);
         $role = mysqli_real_escape_string($connection ,$_POST['role']);
         $status = mysqli_real_escape_string($connection ,$_POST['status'][0]) == 'on' ? '1' : '0';
 
+        $image = $_FILES['image']['name'];
+        $img = str_replace(' ','',explode('.',$image)[0].rand().".".pathinfo($image, PATHINFO_EXTENSION));
 
-        if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === ''){
+
+        if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' || $profession === ''){
             $_SESSION['message'] = 'Please fill in all the fields !!';
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
@@ -39,6 +43,13 @@
         }
 
 
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$profession)) {
+            $_SESSION['message'] = "profession should contain just letters and white-space :)";
+            echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
+            exit(0);
+        }
+
+
         $upper = preg_match('@[A-Z]@', $Pass);
         $lower = preg_match('@[a-z]@', $Pass);
         $nbr    = preg_match('@[0-9]@', $Pass);
@@ -60,11 +71,12 @@
             exit(0);
         }
 
-        $Query = "insert into users (firstname,lastname,email,password,role_as,status) values ('$Fname', '$Lname','$Email', '$Pass', '$role','$status')";
+        $Query = "insert into users (firstname,lastname,profession,email,password,role_as,status) values ('$Fname', '$Lname','$profession','$Email', '$Pass', '$role','$status')";
         $Result = mysqli_query($connection, $Query);
 
 
         if($Result){
+            move_uploaded_file($_FILES['image']['tmp_name'],'../img/users/'.$img);
             $_SESSION['message'] = "Added Seccussfully :)";
             echo "<script type='text/javascript'>  window.location='./registered_users.php'; </script>";
             exit(0);

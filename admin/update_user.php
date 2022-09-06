@@ -5,14 +5,20 @@
 
         $Fname = mysqli_real_escape_string($connection ,$_POST['fname']);
         $Lname = mysqli_real_escape_string($connection ,$_POST['lname']);
+        $profession = mysqli_real_escape_string($connection ,$_POST['profession']);
         $Email = mysqli_real_escape_string($connection ,$_POST['email']);
         $Pass = mysqli_real_escape_string($connection ,$_POST['password']);
         $role = mysqli_real_escape_string($connection ,$_POST['role']);
         $status = mysqli_real_escape_string($connection ,$_POST['status'][0]) == 'on' ? '1' : '0';
         $id = $_POST['id'];
         
+        $image = $_FILES['image']['name'];
+        $img = str_replace(' ','',explode('.',$image)[0].rand().".".pathinfo($image, PATHINFO_EXTENSION));
 
-        if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === ''){
+        echo "<script type='text/javascript'> alert(".$img.") </script>";
+        
+
+        if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' || $profession === ''){
             $_SESSION['message'] = 'Please fill in all the fields !!';
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
@@ -39,6 +45,12 @@
             exit(0);
         }
 
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$profession)) {
+            $_SESSION['message'] = "profession should contain just letters and white-space :)";
+            echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
+            exit(0);
+        }
+
 
         $upper = preg_match('@[A-Z]@', $Pass);
         $lower = preg_match('@[a-z]@', $Pass);
@@ -53,11 +65,12 @@
         }
 
 
-        $Query = "update users set email = '$Email', password = '$Pass', firstname = '$Fname', lastname = '$Lname', role_as = '$role', status = '$status' where id = '$id'";
+        $Query = "update users set email = '$Email', password = '$Pass', image = '$img', firstname = '$Fname', lastname = '$Lname', profession = '$profession', role_as = '$role', status = '$status' where id = '$id'";
         $Result = mysqli_query($connection, $Query);
 
 
         if($Result){
+            move_uploaded_file($_FILES['image']['tmp_name'],'../img/users/'.$img);
             $_SESSION['message'] = "Updated Seccussfully :)";
             echo "<script type='text/javascript'>  window.location='./registered_users.php'; </script>";
             exit(0);

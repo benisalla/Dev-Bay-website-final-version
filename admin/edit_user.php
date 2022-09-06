@@ -32,7 +32,7 @@ include('./includes/header.php');
                         if (mysqli_num_rows($Result) > 0) :
                             foreach ($Result as $user) : ?>
 
-                                <form action="./update_user.php" method="POST">
+                                <form action="./update_user.php" method="POST" enctype="multipart/form-data">
                                     <input type="text" name='id' value="<?= $user['id']?>" style="display: none;">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
@@ -42,6 +42,10 @@ include('./includes/header.php');
                                         <div class="col-md-6 mb-3">
                                             <label for="Lname">Last Name</label>
                                             <input value="<?= $user['lastname'] ?>" type="text" name="lname" required class="form-control" id="Lname">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="Profession">Profession</label>
+                                            <input value="<?= $user['profession'] ?>" type="text" name="profession" required class="form-control" id="Profession">
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="Email">Email</label>
@@ -58,6 +62,10 @@ include('./includes/header.php');
                                                 <option value="1" <?= $user['role_as'] == '1' ? 'selected' : '' ?>>Admin</option>
                                                 <option value="0" <?= $user['role_as'] == '0' ? 'selected' : '' ?>>User</option>
                                             </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="Image">Image</label>
+                                            <input type="file" name="image" required class="form-control" id="Image">
                                         </div>
                                         <div class="col-md-6 mb-3 flex ">
                                             <label for="Status">Status</label>

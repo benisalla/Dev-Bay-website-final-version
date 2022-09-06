@@ -1,4 +1,3 @@
-/******************** Template CSS ********************/
 :root {
     --darkBlue: #000066;
     --lightBlue: #06A3DA;
@@ -16,7 +15,6 @@
 
 
 
-/******************** override bg-color ********************/
 .bg-white {
     background-color: var(--lightBG) !important;
 }
@@ -45,7 +43,6 @@
     color: var(--iconColor) !important;
 }
 
-/* ---------------------------------------------------------------- */
 
 body {
     background-color: var(--theme);
@@ -57,7 +54,6 @@ body {
 }
 
 
-/* -----------------------------------<start : toggle button>--------------------------------- */
 .navbar-toggler {
     border: none !important;
     padding: 0 !important;
@@ -123,7 +119,6 @@ h6,
     transition: all 0.5s ease;
 }
 
-/* ----------------------------------< dark mode + language changer >------------------------------------ */
 .btn-dark-light {
     position: relative;
     z-index: 9999;
@@ -192,7 +187,11 @@ h6,
     color: var(--toggleColor)
 }
 
-.darkMode_languageChanger{
+.darkMode_languageChanger {
+    position: fixed;
+    z-index: 9999;
+    bottom: 1rem;
+    left: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -201,17 +200,39 @@ h6,
     margin: 0 auto;
 }
 
-/* ----------------------------------< dark mode + language changer >------------------------------------ */
-
-
-/* -----------------------------------<end : toggle button>--------------------------------- */
-
 .dropdown-menu {
     border: none;
-    border-left: 2px var(--darkBlue) solid;
+    border-bottom: 2px var(--darkBlue) solid;
+    border-top: 1px var(--darkBlue) solid;
     width: 50%;
     transform: translateX(30%);
-    padding: 0;
+    padding: 1rem 0.3rem;
+    left: -100px !important;
+    top: 78px !important;
+    box-shadow: var(--darkBlue) 0px 0px 3px;
+    z-index: 9999;
+}
+
+.dropdown-menu::after {
+    content: "";
+    border-bottom: 10px var(--darkBlue) solid;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    position: absolute;
+    top: -1.3rem;
+    left: calc(50% - 10px);
+}
+
+.setting_icons {
+    margin-right: 0.3rem;
+}
+
+
+.SettingsUnderLine {
+    width: 100%;
+    height: 3px;
+    background-color: var(--darkBlue);
 }
 
 .dropdown-item {
@@ -223,7 +244,12 @@ h6,
     color: #0b4d99;
 }
 
-/* ----------------------------------< start : MenuUnderLine >-------------------------------------- */
+.dark_mode_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 hr.MenuUnderLine {
     visibility: hidden;
@@ -254,10 +280,6 @@ hr.MenuUnderLine::before {
     visibility: visible;
 }
 
-
-/* ----------------------------------< end : MenuUnderLine >-------------------------------------- */
-
-/* -----------------------------------<start : go up button>--------------------------------- */
 
 .back-to-top {
     display: block;
@@ -321,9 +343,6 @@ hr.MenuUnderLine::before {
     border-color: #fff;
 }
 
-/* -----------------------------------<end : go up button>--------------------------------- */
-
-/*---------------------------< start : icon-square >-----------------------------*/
 .icon-square {
     width: 60px;
     height: 60px;
@@ -334,10 +353,6 @@ hr.MenuUnderLine::before {
     transform: rotate(-45deg);
 }
 
-/*---------------------------< end : icon-square >-----------------------------*/
-
-
-/*----------------------------------< start : button >----------------------------------*/
 
 .spatiel-btn {
     padding: 0.6em 2em;
@@ -410,9 +425,6 @@ hr.MenuUnderLine::before {
     color: var(--midBlue);
 }
 
-/*----------------------------------< end : button >----------------------------------*/
-
-/*** Spinner ***/
 .spinner {
     width: 40px;
     height: 40px;
@@ -466,7 +478,6 @@ hr.MenuUnderLine::before {
     opacity: 1;
 }
 
-/*------------------------< logo >-----------------------*/
 .logo {
     background-color: #FFF;
     width: 100px;
@@ -481,7 +492,6 @@ hr.MenuUnderLine::before {
 }
 
 
-/*** Heading ***/
 h1,
 h2,
 .fw-bold {
@@ -500,7 +510,6 @@ h6,
     font-weight: 600 !important;
 }
 
-/*** Button ***/
 .btn {
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
@@ -570,7 +579,6 @@ h6,
 }
 
 .navbar-dark .navbar-toggler {
-    /* color: var(--darkBlue) !important; */
     border-color: var(--darkBlue) !important;
 }
 
@@ -602,7 +610,6 @@ h6,
         background-color: var(--darkerBlue);
     }
 
-    /* ----------------------------------------<hide add>-------------------------------- */
     .copy-pop-up-message {
         color: green;
     }
@@ -629,7 +636,6 @@ h6,
         transform: translateY(20%) scale(0.4);
     }
 
-    /* ----------------------------------------<hide add>-------------------------------- */
 
     .message-active {
         cursor: pointer;
@@ -650,7 +656,6 @@ h6,
 
 
 
-    /* ----------------------------------------<end hide add>-------------------------------- */
 
     .sticky-top.navbar-dark {
         position: fixed;
@@ -684,12 +689,9 @@ h6,
     }
 }
 
-/** HeaderSection **/
-/* effect ecub */
 .scene {
     width: 200px;
     height: 200px;
-    /* border: 1px solid #CCC; */
     perspective: 400px;
     position: absolute;
 
@@ -753,7 +755,6 @@ h6,
     font-weight: bold;
     color: white;
     text-align: center;
-    /* animation: face 5s infinite ease-in-out; */
 }
 
 .img-cube {
@@ -938,9 +939,6 @@ h6,
     text-align: center;
 }
 
-/* end head section  */
-/* 
-/*** Carousel ***/
 .carousel-caption {
     top: 0;
     left: 0;
@@ -964,8 +962,6 @@ h6,
     height: 3rem;
 }
 
-*/
-/*--------------------------------< Section Title >--------------------------------*/
 
 .section-title {
     position: relative;
@@ -1049,7 +1045,6 @@ h6,
     }
 }
 
-/*---------------------------------< Service >---------------------------------*/
 .service-item {
     position: relative;
     height: 300px;
@@ -1142,6 +1137,7 @@ h6,
         transform: rotate(405deg);
     }
 }
+
 @keyframes LogoSpinner {
     0% {
         transform: rotate(-135deg);
@@ -1270,7 +1266,6 @@ h6,
     animation: animateTitle 2s ease 0s 5 alternate;
 }
 
-/*-------------------------------------------------------------------*/
 
 @keyframes MoveUpDown {
     0% {
@@ -1300,9 +1295,6 @@ h6,
 }
 
 
-/*-------------------------------< end : service >-------------------------------*/
-
-/* ------------------------------------------<<modifying the button */
 .service-item a.btn {
     position: absolute;
     width: 70px;
@@ -1340,10 +1332,6 @@ h6,
     -webkit-text-stroke: 2px #ffffff;
 }
 
-/* ------------------------------------------<< end : modifying the button */
-
-
-/*** Testimonial ***/
 .testimonial-carousel .owl-dots {
     margin-top: 15px;
     display: flex;
@@ -1382,7 +1370,6 @@ h6,
 }
 
 
-/*----------------------------< Team >---------------------------*/
 .team-item {
     transition: .5s;
 }
@@ -1402,7 +1389,6 @@ h6,
     left: -3.7rem;
 }
 
-/* ----------<< start : icon animation >>---------- */
 
 .social-icon a.btn {
     background-color: #fff;
@@ -1418,7 +1404,6 @@ h6,
     color: #fff;
 }
 
-/* ----------<< end : icon animation >>---------- */
 
 .team-item:hover {
     box-shadow: 0 0 30px #DDDDDD;
@@ -1455,7 +1440,6 @@ h6,
     left: 0;
 }
 
-/*---------------------------< start : side-btn >-----------------------------*/
 
 .side-btn {
     position: absolute;
@@ -1488,9 +1472,6 @@ h6,
     left: 0;
 }
 
-/*---------------------------< end : side-btn >-----------------------------*/
-
-/* ----------------------------< start : slideInUp >------------------------------ */
 .slideInUp {
     transition: transform 0.5s ease;
     z-index: 10;
@@ -1510,7 +1491,6 @@ h6,
     transform: rotate(360deg);
 }
 
-/* ----------------------------< end : slideInUp >------------------------------ */
 
 
 .team-item .team-img img,
@@ -1523,7 +1503,6 @@ h6,
     transform: scale(1.1);
 }
 
-/*** Miscellaneous ***/
 
 @media (min-width: 991.98px) {
     .facts {
@@ -1556,7 +1535,6 @@ h6,
 
 
 
-/** start style form**/
 .form-style {
 
     box-shadow: -1px 1px 7px -1px rgba(0, 0, 0, 1);
@@ -1609,12 +1587,8 @@ h6,
     border-color: #000066 !important;
 }
 
-/* end form style */
-
-/* // X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) and (min-width :0px) {
 
-    /* respensive background for mobile phone */
     .headerSection {
         display: block;
         visibility: visible;
@@ -1636,9 +1610,7 @@ h6,
     .logo {
         width: 100px;
     }
-   
 
-    /* end  respensive background for mobile phone */
 
     .carousel-caption h5 {
         font-size: 14px;
@@ -1649,8 +1621,9 @@ h6,
         font-size: 30px;
         font-weight: 600 !important;
     }
-    .carousel-inner{
-        margin-top:72px;
+
+    .carousel-inner {
+        margin-top: 72px;
     }
 
 }
@@ -1676,6 +1649,7 @@ h6,
 
     }
 }
+
 @media (min-width: 767.98px) {
     .footer-about {
         margin-bottom: -75px;
@@ -1684,9 +1658,11 @@ h6,
     .darkMode_languageChanger {
         margin-left: 1rem !important;
     }
-    .carousel-inner{
+
+    .carousel-inner {
         height: calc(100vh - 45px);
     }
+
     .carousel-caption {
         height: calc(100vh - 45px);
     }

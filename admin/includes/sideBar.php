@@ -60,12 +60,12 @@
                 </a>
                 <div class="collapse" id="collapseComments" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav d-flex flex-row">
-                        <a class="nav-link" href="layout-static.html">
+                        <a class="nav-link" href="./add_comment.php">
                             <button class="btn btn-light">
                                 <i class='fa fa-plus' style='color: red'></i>
                             </button>
                         </a>
-                        <a class="nav-link" href="layout-static.html">
+                        <a class="nav-link" href="./view_comment.php">
                             <button class="btn btn-light">
                                 <i class='fa fa-eye' style='color: blue'></i>
                             </button>

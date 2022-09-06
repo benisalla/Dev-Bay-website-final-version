@@ -64,10 +64,12 @@
                                 </div>
                                 <h4 class="mb-3"><?= $post['title'] ?></h4>
                                 <p><?= $post['excerpt'] ?></p>
-                                <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                                <a class="text-uppercase" href="">Read More <i class='fa fa-chevron-circle-right' style='color: blue'></i></a>
                             </div>
                         </div>
                     </div>
+
+                    
                 <?php endforeach; ?>
             <?php else : ?>
 

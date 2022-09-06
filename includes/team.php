@@ -34,8 +34,8 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <h4 class="text-primary">Full Name</h4>
-                        <p class="text-uppercase m-0">Designation</p>
+                        <h4 class="text-primary">Saoudi Zakaria</h4>
+                        <p class="text-uppercase m-0">Founder of DEV-BAY</p>
                     </div>
                 </div>
             </div>

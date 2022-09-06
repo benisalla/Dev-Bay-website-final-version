@@ -1,5 +1,4 @@
 <?php 
-session_start();
 if(isset($_SESSION['user_auth'])){
     $_SESSION['message'] = "You Are Already Logged In :)";
     echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
@@ -14,10 +13,13 @@ if(isset($_SESSION['user_auth'])){
         <?php include('./tellMessage.php') ?>
 
         <div class="container">
+            <div class="position-fixed top-2 end-2 mt-2 ml-2 m-auto">
+                <a href="./index.php" class="btn btn-secondary">DEV-BAY</a>
+            </div>
             <div class="signin-content">
                 <div class="signin-image">
-                    <figure><img src="./log_files/images/signin-image.jpg" alt="sing up image"></figure>
-                    <a href="#" class="signup-image-link">Create an account</a>
+                    <figure><img src="./log_files/images/Data_security_24.jpg" alt="sing up image"></figure>
+                    <a href="./register.php" class="signup-image-link">Create an account</a>
                 </div>
 
                 <div class="signin-form">
@@ -39,6 +41,7 @@ if(isset($_SESSION['user_auth'])){
                             <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                         </div>
                     </form>
+
                     <div class="social-login">
                         <span class="social-label">Or login with</span>
                         <ul class="socials">

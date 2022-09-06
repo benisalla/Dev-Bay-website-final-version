@@ -34,6 +34,10 @@ include('./includes/header.php');
                                 <input type="text" name="lname" required class="form-control" id="Lname">
                             </div>
                             <div class="col-md-6 mb-3">
+                                <label for="Profession">Profession</label>
+                                <input type="text" name="profession" required class="form-control" id="Profession">
+                            </div>
+                            <div class="col-md-6 mb-3">
                                 <label for="Email">Email</label>
                                 <input type="email" name="email" required class="form-control" id="Email">
                             </div>
@@ -48,6 +52,10 @@ include('./includes/header.php');
                                     <option value="1">Admin</option>
                                     <option value="0">User</option>
                                 </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="Image">Image</label>
+                                <input type="file" name="image" required class="form-control" id="Image">
                             </div>
                             <div class="col-md-6 mb-3 flex ">
                                 <label for="Status">Status</label>
