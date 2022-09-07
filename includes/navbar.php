@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
             <a href="#" class="nav-item nav-link active PressedLink">Home</a>
@@ -24,7 +25,7 @@
             <a href="#blog" class="nav-item nav-link PressedLink">Blog</a>
             <hr class="MenuUnderLine">
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                 <div class="dropdown-menu m-0">
                     <a href="#contact" class="dropdown-item PressedLink">Contact Us</a>
                     <a href="#plan" class="dropdown-item PressedLink">Pricing Plan</a>
@@ -34,7 +35,7 @@
             </div>
             <hr class="MenuUnderLine">
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Settings</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Settings</a>
                 <div class="dropdown-menu m-0">
                     <div class="dark_mode_btn">
                         <div class="btn-dark-light">
@@ -49,14 +50,15 @@
                         <?php if($_SESSION['user_Role'] == '1'): ?>
                             <a href="./admin/index.php" class="dropdown-item PressedLink"><i class="fa fa-tachometer-alt text-primary setting_icons"></i> DashBoard</a>
                             <form method="POST" action="./code.php" >
-                                <button href="#" type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
+                                <button type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
                             </form>
                         <?php elseif($_SESSION['user_Role'] == '0'): ?>
                             <form method="POST" action="./code.php" >
-                                <button href="#" type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
+                                <button type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
+                                <a href="./feedback.php" class="dropdown-item PressedLink"><i class="fa fa-comment text-primary setting_icons"></i> FeedBack</a>
                             </form>                        
                         <?php else: ?>
-                            <a href="#" class="dropdown-item PressedLink"><i class="fa fa-sign-in-alt text-primary setting_icons"></i> Sign-In</a>
+                            <a href="./login.php" class="dropdown-item PressedLink"><i class="fa fa-sign-in-alt text-primary setting_icons"></i> Sign-In</a>
                         <?php endif; ?>
                     <?php else: ?>
                         <a href="./login.php" class="dropdown-item PressedLink"><i class="fa fa-sign-in-alt text-primary setting_icons"></i> Sign-In</a>

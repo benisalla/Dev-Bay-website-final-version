@@ -1,3 +1,6 @@
+<?php include('./log_files/header.php') ?>
+<?php include('./tellMessage.php'); ?>
+
 <?php
 if (isset($_SESSION['user_auth'])) {
     $_SESSION['message'] = "You Have Already An Account :)";
@@ -5,9 +8,6 @@ if (isset($_SESSION['user_auth'])) {
     exit(0);
 }
 ?>
-<?php include('./log_files/header.php') ?>
-
-<?php include('./tellMessage.php'); ?>
 
 <section class="signup">
     <div class="container">

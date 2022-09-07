@@ -6,6 +6,7 @@
 
         $Email = mysqli_real_escape_string($connection ,$_POST['email']);
         $Pass = mysqli_real_escape_string($connection ,$_POST['password']);
+        $remember = $_POST['remember-me'];
 
 
         if($Email === '' || $Pass === ''){
@@ -26,6 +27,21 @@
         $Result = mysqli_query($connection, $Query);
 
         if(mysqli_num_rows($Result) > 0){
+
+            if($remember == "on"){
+                setcookie("log-in-email",$Email,time()+(60*60*24));
+                setcookie("log-in-password",$Pass,time()+(60*60*24));
+            }else{
+                if(isset($_COOKIE['log-in-email'])){
+                    unset($_COOKIE['log-in-email']);
+                    setcookie("log-in-email",'',time()-3600);
+                }
+                if(isset($_COOKIE['log-in-password'])){
+                    unset($_COOKIE['log-in-password']);
+                    setcookie("log-in-password",'',time()-3600);
+                }
+            }
+
             $user = null;
             foreach($Result as $data){
                 $user = $data;
@@ -33,7 +49,7 @@
             $_SESSION['user_auth'] = true; 
             $_SESSION['user_Role'] = $user["role_as"];
             $_SESSION['user'] = [
-                'name' => $user['firstname'],
+                'name' => $user['firstname']." ".$user['lastname'],
                 'id' => $user['id'],
                 'email' => $user['email'],
             ];
