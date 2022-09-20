@@ -354,6 +354,10 @@ hr.MenuUnderLine::before {
 }
 
 
+
+
+
+
 .spatiel-btn {
     padding: 0.6em 2em;
     border: none;
@@ -424,6 +428,10 @@ hr.MenuUnderLine::before {
 .spatiel-btn:hover {
     color: var(--midBlue);
 }
+
+
+
+
 
 .spinner {
     width: 40px;
@@ -1309,7 +1317,7 @@ h6,
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate(0) translateX(-200px) scale(0.01);
+    transform: rotate(0) scale(0);
     transition: all 0.6s ease;
 }
 
@@ -1320,7 +1328,7 @@ h6,
 
 .service-item:hover a {
     opacity: 1;
-    transform: translateX(0) rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
 }
 
 .service-item:hover a.btn:hover {
@@ -1452,15 +1460,14 @@ h6,
 .side-btn::before {
     position: absolute;
     content: "";
-    right: -46px;
-    top: -2px;
+    right: -42px;
+    top: -1.5px;
     width: 0;
     height: 0;
     border: 18px solid transparent;
     border-top: 0;
     border-top: 25px solid #000066;
     transform: rotate(-90deg);
-    box-shadow: var(--lightBlue) 0.2px -7px 0px;
 }
 
 .side-btn:hover {
@@ -1478,7 +1485,7 @@ h6,
 }
 
 .slideInUp:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     box-shadow: black 2px 2px 5px;
     z-index: 99;
 }
@@ -1666,4 +1673,45 @@ h6,
     .carousel-caption {
         height: calc(100vh - 45px);
     }
+}
+
+/* =================================================================================== */
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
 }

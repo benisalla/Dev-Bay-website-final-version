@@ -68,7 +68,7 @@
                     <div class="service-icon">
                         <i class="fab fa-android text-white"></i>
                     </div>
-                    <h4 class="mb-3">Web&Mobile Apps</h4>
+                    <h4 class="mb-3">Web & Mobile Apps</h4>
                     <p class="m-0">We create amazing mobile and web apps that match our clients' demands and help
                         them achieve their goals.
                     </p>

@@ -3,7 +3,10 @@
 
 <?php
 if (isset($_SESSION['user_auth'])) {
-    $_SESSION['message'] = "You Have Already An Account :)";
+    $_SESSION['message'] = [
+        'content' => "You Have Already An Account :)",
+        'type' => 'alert',
+    ];
     echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
     exit(0);
 }
@@ -12,7 +15,7 @@ if (isset($_SESSION['user_auth'])) {
 <section class="signup">
     <div class="container">
         <div class="position-fixed top-2 end-2 mt-2 ml-2 m-auto">
-            <a href="./index.php" class="btn btn-secondary">DEV-BAY</a>
+            <a href="./index.php" class="btn btn-secondary"><i class="zmdi zmdi-home"></i>HOME</a></a>
         </div>
         <div class="signup-content">
             <div class="signup-form">

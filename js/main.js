@@ -164,7 +164,7 @@
         $('.nav-link.dropdown-toggle').removeClass('active');
         
         if($AllClasses.indexOf('dropdown-item') === 0){
-            $('.nav-link.dropdown-toggle').addClass('active');
+            $('.nav-link.dropdown-toggle.More_links').addClass('active');
         }else{
             myTarget.addClass('active');
         }
@@ -174,32 +174,70 @@
     $(window).on('scroll', ()=>{
         const $Height = $(document).scrollTop();
 
-        console.log("difference is : "+ ($Height - $('#contact').offset().top))
-
         toggleNav($($('.PressedLink')[0]));
 
-        if( $Height - $('#about').offset().top >= -10){
+        if( $Height - $('#about').offset().top >= 0){
             toggleNav($($('.PressedLink')[1]));
         }
 
-        if($Height - $('#service').offset().top >= -10){
+        if($Height - $('#service').offset().top >= 0){
             toggleNav($($('.PressedLink')[2]));
         }
-        if($Height - $('#plan').offset().top >= -10 ){
+        if($Height - $('#plan').offset().top >= 0 ){
             toggleNav($($('.PressedLink')[7]));
         }
-        if($Height - $('#contact').offset().top >= -10 ){
-            toggleNav($($('.PressedLink')[4]));
-        }
-        if($Height - $('#testimonial').offset().top >= -10){
+        if($Height - $('#contact').offset().top >= 0 ){
             toggleNav($($('.PressedLink')[7]));
         }
-        if($Height - $('#team').offset().top >= -10 ){
+        if($Height - $('#testimonial').offset().top >= 0){
             toggleNav($($('.PressedLink')[7]));
         }
-        if($Height - $('#blog').offset().top >= -10 ){
+        if($Height - $('#team').offset().top >= 0 ){
+            toggleNav($($('.PressedLink')[7]));
+        }
+        if($Height - $('#blog').offset().top >= 0 ){
             toggleNav($($('.PressedLink')[3]));
         }
+        
+    });
+
+
+    $(document).on('click','#send_request', ()=>{
+        var $email = $('#request_email').val();
+        var $fullname = $("#request_fullname").val();
+        var $servise = $("#request_service").find(":selected").val();
+        var $title = $("#request_title").val();
+        var $body = $("#request_body").val();
+
+        $("#request_title").val("");
+        $("#request_body").val("");
+
+        $.ajax({
+            type: "post",
+            url: "requist_code.php",
+            data: {
+                email: $email,
+                fullname: $fullname,
+                service: $servise,
+                title: $title,
+                body: $body
+            },
+            beforeSend:function(){
+                $("#send_request").html("<i class='fa fa-spinner rotating fs-2 fw-600'></i>");
+            },
+            success: function (response) {
+                setTimeout(function() {
+                    if(response == 'seccuss'){
+                        $("#send_request").html("<i class='fa fa-check fs-2 fw-600' style='color: green;'></i>");
+                    }else{
+                        $("#send_request").html("<i class='fa fa-times fs-2 fw-600' style='color: red;'></i>");
+                    }
+                },2000);
+                setTimeout(function() {
+                    $("#send_request").html("Send");
+                },3400);
+            }
+        });
         
     });
 

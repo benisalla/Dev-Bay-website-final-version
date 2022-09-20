@@ -53,19 +53,19 @@
                     </nav>
                 </div>
 
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseComments" aria-expanded="false" aria-controls="collapseComments">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsetestimonials" aria-expanded="false" aria-controls="collapsetestimonials">
                     <div class="sb-nav-link-icon"><i class='fas fa-comment' style='color: white'></i></div>
-                    Comment
+                    Testimonial
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseComments" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="collapsetestimonials" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav d-flex flex-row">
-                        <a class="nav-link" href="./add_comment.php">
+                        <a class="nav-link" href="./add_testimonial.php">
                             <button class="btn btn-light">
                                 <i class='fa fa-plus' style='color: red'></i>
                             </button>
                         </a>
-                        <a class="nav-link" href="./view_comment.php">
+                        <a class="nav-link" href="./view_testimonial.php">
                             <button class="btn btn-light">
                                 <i class='fa fa-eye' style='color: blue'></i>
                             </button>
@@ -73,7 +73,18 @@
                     </nav>
                 </div>
 
-                <div class="sb-sidenav-menu-heading">Addons</div>
+                <div class="sb-sidenav-menu-heading">Messages</div>
+                <a class="nav-link" href="./view_email.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-envelope" style='color: white;'></i></div>
+                    Requists
+                </a>
+                <a class="nav-link" href="tables.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Tables
+                </a>
+
+
+                <div class="sb-sidenav-menu-heading">Statistics In Details</div>
                 <a class="nav-link" href="charts.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Charts

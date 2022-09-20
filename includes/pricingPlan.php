@@ -4,9 +4,9 @@
             <h5 class="fw-bold text-primary text-uppercase">Pricing Plans</h5>
             <h1 class="mb-0">We are Offering Competitive Prices for Our Clients</h1>
         </div>
-        <div class="row g-0">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="bg-light rounded">
+        <div class="row g-2">
+            <div class="col-lg-4 wow " data-wow-delay="0.6s">
+                <div class="bg-light rounded slideInUp">
                     <div class="border-bottom py-4 px-5 mb-0">
                         <h4 class="text-primary mb-1">Basic Plan</h4>
                         <small class="text-uppercase">For Small Size project</small>
@@ -40,8 +40,8 @@
             </div>
 
 
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
+            <div class="col-lg-4 wow " data-wow-delay="0.3s">
+                <div class="bg-white rounded slideInUp shadow position-relative" style="z-index: 1;">
                     <div class="border-bottom py-4 px-5 mb-0">
                         <h4 class="text-primary mb-1">Standard Plan</h4>
                         <small class="text-uppercase">For Medium Size Project</small>
@@ -75,8 +75,8 @@
             </div>
 
 
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="bg-light rounded">
+            <div class="col-lg-4 wow " data-wow-delay="0.9s">
+                <div class="bg-light rounded slideInUp">
                     <div class="border-bottom py-4 px-5 mb-0">
                         <h4 class="text-primary mb-1">Advanced Plan</h4>
                         <small class="text-uppercase">For Large Size project</small>

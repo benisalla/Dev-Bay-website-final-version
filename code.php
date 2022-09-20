@@ -9,13 +9,19 @@ if(isset($_POST['logout_btn'])){
     unset($_SESSION['user']);
 
     if(!isset($_SESSION['message'])){
-        $_SESSION['message'] = 'You Have Logged Out Seccussfully :)';
+        $_SESSION['message'] = [
+            'content' => 'You Have Logged Out Seccussfully :)',
+            'type' => 'seccuss',
+        ];
     }
     echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
     exit(0);
 }
 else{
-    $_SESSION['message'] = 'You Are Not Allowed To Access:)';
+    $_SESSION['message'] = [
+        'content' => 'You Are Not Allowed To Access:)',
+        'type' => 'alert',
+    ];
     echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
     exit(0);
 }

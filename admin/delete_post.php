@@ -8,16 +8,25 @@
         $Result = mysqli_query($connection, $Query);
 
         if($Result){
-            $_SESSION['message'] = 'Deleted Successfully :)';
+            $_SESSION['message'] = [
+                'content' => 'Deleted Successfully :)',
+                'type' => 'seccuss',
+            ];
             echo "<script type='text/javascript'>  window.location='./view_post.php'; </script>";
             exit(0);
         }else{
-            $_SESSION['message'] = 'Something Went Wrong :)';
+            $_SESSION['message'] = [
+                'content' => 'Something Went Wrong :)',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./view_post.php'; </script>";
             exit(0);
         }
     }else{
-        $_SESSION['message'] = 'Error :)';
+        $_SESSION['message'] = [
+            'content' => 'Error :)',
+            'type' => 'alert',
+        ];
         echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
         exit(0);
     }

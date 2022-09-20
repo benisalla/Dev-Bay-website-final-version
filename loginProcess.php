@@ -10,20 +10,27 @@
 
 
         if($Email === '' || $Pass === ''){
-            $_SESSION['message'] = 'Please fill in all the fields !!';
+            $_SESSION['message'] = [
+                'content' => 'Please fill in all the fields !!',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
             exit(0);
         }
 
 
         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['message'] = "email is not in a proper form :)";
+            $_SESSION['message'] = [
+                'content' => "email is not in a proper form :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
             exit(0);
         }
 
+        $encPass = crypt($Pass,"dev-bay");
 
-        $Query = "select * from users where email = '$Email' and password = '$Pass'";
+        $Query = "select * from users where email = '$Email' and password = '$encPass'";
         $Result = mysqli_query($connection, $Query);
 
         if(mysqli_num_rows($Result) > 0){
@@ -50,26 +57,40 @@
             $_SESSION['user_Role'] = $user["role_as"];
             $_SESSION['user'] = [
                 'name' => $user['firstname']." ".$user['lastname'],
+                'firstname' => $user['firstname'],
+                'lastname' => $user['lastname'],
                 'id' => $user['id'],
                 'email' => $user['email'],
             ];
 
             if($_SESSION['user_Role'] == '1'){
-                $_SESSION['message'] = "Welcome To DashBoard :)";
+                $_SESSION['message'] = [
+                    'content' => "Welcome To DashBoard :)",
+                    'type' => 'seccuss',
+                ];
                 echo "<script type='text/javascript'>  window.location='./admin/index.php'; </script>";
                 exit(0);
             }elseif($_SESSION['user_Role'] == '0'){
-                $_SESSION['message'] = "You Are Loged in Seccussfully :)";
+                $_SESSION['message'] = [
+                    'content' => "You Are Loged in Seccussfully :)",
+                    'type' => 'seccuss',
+                ];
                 echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
                 exit(0);
             }else{
-                $_SESSION['message'] = "this category is not available now :)";
+                $_SESSION['message'] = [
+                    'content' => "this category is not available now :)",
+                    'type' => 'alert',
+                ];
                 echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
                 exit(0);
             }
 
         }else{
-            $_SESSION['message'] = "email or password is incorrect :)";
+            $_SESSION['message'] = [
+                'content' => "email or password is incorrect :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
             exit(0);
         }

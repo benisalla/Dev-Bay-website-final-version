@@ -32,41 +32,51 @@
             <div class="col-lg-5">
                 <div class="bg-white rounded-3 h-100 d-flex align-items-center p-5 wow zoomIn  form-style " data-wow-delay="0.9s">
 
-                    <form id="contact" onsubmit="sendEmail();reset();return false;">
+                    <div>
                         <div class="row g-3 ">
                             <div class="col-xl-12">
                                 <h3 class="text-center text-white rounded-3 py-3">CONTACT US</h3>
                             </div>
+
                             <div class="col-xl-12 position-relative">
-                                <input type="text" name="name" id="name" class=" effect-1" placeholder="Your Name" style="height: 55px;" required>
+                                <input value="<?= isset($_SESSION['user']) ? $_SESSION['user']['name'] : '' ?>" type="text" id="request_fullname" class=" effect-1" placeholder="Your Name" style="height: 55px;" required>
                                 <span class="Focus-border"></span>
                             </div>
+
                             <div class="col-12 position-relative">
-                                <input id="email" type="email" name="email" class=" effect-1 " placeholder="Your Email" style="height: 55px;" required>
+                                <input value="<?= isset($_SESSION['user']) ? $_SESSION['user']['email'] : '' ?>" id="request_email" type="email" class="request_email effect-1 " placeholder="Your Email" style="height: 55px;" required>
                                 <span class="Focus-border"></span>
                             </div>
+
                             <div class="col-12  position-relative">
-                                <select class="effect-1" name="service" style="height: 55px;" required>
+                                <select class="effect-1" id="request_service" style="height: 55px;" required>
                                     <option selected disabled>Select A Service</option>
-                                    <option value="1">Security</option>
-                                    <option value="2">SEO</option>
-                                    <option value="3">Web development</option>
-                                    <option value="4">Design</option>
-                                    <option value="5">Web and mobile apps</option>
-                                    <option value="6">Maintenance</option>
+                                    <option value="Security">Security</option>
+                                    <option value="SEO">SEO</option>
+                                    <option value="Web development">Web development</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Web and mobile apps">Web and mobile apps</option>
+                                    <option value="Maintenance">Maintenance</option>
                                 </select>
                                 <span class="Focus-border"></span>
                             </div>
+
                             <div class="col-12 position-relative">
-                                <textarea id="message" name="message" class="effect-1" rows="4" placeholder="Message" required></textarea>
+                                <input id="request_title" type="text" class=" effect-1 " placeholder="request's subject" style="height: 55px;" required>
+                                <span class="Focus-border"></span>
+                            </div>
+
+                            <div class="col-12 position-relative">
+                                <textarea id="request_body" class="effect-1" rows="4" placeholder="your Message" required></textarea>
                                 <span class="Focus-border text-area "></span>
                             </div>
+
                             <div class="col-12 d-flex justify-content-center ">
-                                <button name="submit" class="btn spatiel-btn w-50 rounded-3 p-2 mt-3" style=" background-color: #000066;" type="submit">Send
+                                <button class="btn fs-2 spatiel-btn w-50 rounded-3 p-2 mt-3" style=" background-color: #000066;" id="send_request">Send
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

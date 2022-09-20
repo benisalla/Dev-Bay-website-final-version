@@ -25,7 +25,7 @@
             <a href="#blog" class="nav-item nav-link PressedLink">Blog</a>
             <hr class="MenuUnderLine">
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                <a class="nav-link dropdown-toggle More_links" data-bs-toggle="dropdown">More</a>
                 <div class="dropdown-menu m-0">
                     <a href="#contact" class="dropdown-item PressedLink">Contact Us</a>
                     <a href="#plan" class="dropdown-item PressedLink">Pricing Plan</a>
@@ -35,7 +35,7 @@
             </div>
             <hr class="MenuUnderLine">
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Settings</a>
+                <a class="nav-link dropdown-toggle PressedLink" data-bs-toggle="dropdown">Settings</a>
                 <div class="dropdown-menu m-0">
                     <div class="dark_mode_btn">
                         <div class="btn-dark-light">
@@ -56,6 +56,7 @@
                             <form method="POST" action="./code.php" >
                                 <button type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
                                 <a href="./feedback.php" class="dropdown-item PressedLink"><i class="fa fa-comment text-primary setting_icons"></i> FeedBack</a>
+                                <a href="./profile.php" class="dropdown-item PressedLink"><i class="fa fa-user text-primary setting_icons"></i> Profile</a>
                             </form>                        
                         <?php else: ?>
                             <a href="./login.php" class="dropdown-item PressedLink"><i class="fa fa-sign-in-alt text-primary setting_icons"></i> Sign-In</a>

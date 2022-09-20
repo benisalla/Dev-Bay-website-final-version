@@ -16,35 +16,50 @@
 
 
         if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' || $profession === ''){
-            $_SESSION['message'] = 'Please fill in all the fields !!';
+            $_SESSION['message'] = [
+                'content' => 'Please fill in all the fields !!',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
 
 
         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['message'] = "email is not in a proper form :)";
+            $_SESSION['message'] = [
+                'content' => "email is not in a proper form :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
 
 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$Fname)) {
-            $_SESSION['message'] = "first name should contain just letters and white-space :)";
+            $_SESSION['message'] = [
+                'content' => "first name should contain just letters and white-space :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
 
 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$Lname)) {
-            $_SESSION['message'] = "last name should contain just letters and white-space :)";
+            $_SESSION['message'] = [
+                'content' => "last name should contain just letters and white-space :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
 
 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$profession)) {
-            $_SESSION['message'] = "profession should contain just letters and white-space :)";
+            $_SESSION['message'] = [
+                'content' => "profession should contain just letters and white-space :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
@@ -57,7 +72,10 @@
 
 
         if(!$upper || !$lower || !$nbr || !$specialChars || strlen($Pass) < 8) {
-            $_SESSION['message'] = "ths password is too weak :)";
+            $_SESSION['message'] = [
+                'content' => "ths password is too weak :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./edit_user.php?id=".$id."'; </script>";
             exit(0);
         }
@@ -66,22 +84,33 @@
         $testResult = mysqli_query($connection, $textQuery);
 
         if(mysqli_num_rows($testResult) > 0){
-            $_SESSION['message'] = "This email already exist :)";
+            $_SESSION['message'] = [
+                'content' => "This email already exist :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_user_page.php'; </script>";
             exit(0);
         }
 
-        $Query = "insert into users (firstname,lastname,profession,email,password,role_as,status) values ('$Fname', '$Lname','$profession','$Email', '$Pass', '$role','$status')";
+        $encPass = crypt($Pass,"dev-bay");
+
+        $Query = "insert into users (firstname,lastname,profession,email,password,role_as,status) values ('$Fname', '$Lname','$profession','$Email', '$encPass', '$role','$status')";
         $Result = mysqli_query($connection, $Query);
 
 
         if($Result){
             move_uploaded_file($_FILES['image']['tmp_name'],'../img/users/'.$img);
-            $_SESSION['message'] = "Added Seccussfully :)";
+            $_SESSION['message'] = [
+                'content' => "Added Seccussfully :)",
+                'type' => 'seccuss',
+            ];
             echo "<script type='text/javascript'>  window.location='./registered_users.php'; </script>";
             exit(0);
         }else{
-            $_SESSION['message'] = "Something went wrong, Please Try again :)";
+            $_SESSION['message'] = [
+                'content' => "Something went wrong, Please Try again :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_user_page.php'; </script>";
             exit(0);
         }

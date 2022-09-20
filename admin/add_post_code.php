@@ -20,7 +20,10 @@
 
 
         if($title === '' || $slug === '' || $body === '' || $excerpt == ''){
-            $_SESSION['message'] = 'Please fill in all the fields !!';
+            $_SESSION['message'] = [
+                'content' => 'Please fill in all the fields !!',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_post.php'; </script>";
             exit(0);
         }
@@ -32,11 +35,17 @@
 
         if($Result){
             move_uploaded_file($_FILES['image']['tmp_name'],'../img/blog/'.$img);
-            $_SESSION['message'] = "Added Seccussfully :)";
+            $_SESSION['message'] = [
+                'content' => "Added Seccussfully :)",
+                'type' => 'seccuss',
+            ];
             echo "<script type='text/javascript'>  window.location='./view_post.php'; </script>";
             exit(0);
         }else{
-            $_SESSION['message'] = "Something went wrong, Please Try again :)";
+            $_SESSION['message'] = [
+                'content' => "Something went wrong, Please Try again :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_post.php'; </script>";
             exit(0);
         }

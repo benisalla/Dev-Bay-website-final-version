@@ -1,6 +1,6 @@
 <div class="container-fluid mt-3  pt-lg-0">
     <div class="container py-5 pt-lg-0">
-        <div class="row gx-0">
+        <div class="row g-5 mt-5">
             <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
                 <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4 m-2 rounded-3" style="height: 150px;">
                     <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2 icon-square">

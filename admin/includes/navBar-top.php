@@ -10,19 +10,47 @@
             <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
         </div>
     </form>
+    <!-- messages -->
+    <?php
+    $Query = "select count(*) as newReq from email where state = '0'";
+    $Result = mysqli_query($connection, $Query);
+    if (mysqli_num_rows($Result) > 0) {
+        $arr = mysqli_fetch_array($Result);
+        $newReq = $arr['newReq'];
+    }
+
+    ?>
+
+
+    <a class="nav-link" href="#">
+        <i class="fas fa-bell text-light"></i>
+        <small class="position-absolute top-0 right-0 text-light h-auto rounded px-1" style="height: auto; 
+        background-color: red;
+         font-size:10px;
+         "><?= $newReq ?></small>
+    </a>
     <!-- Navbar-->
     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../index.php">DEV-BAY LIVE</a></li>
-                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                <li><a class="dropdown-item" href="../index.php">
+                        <i class='fas fa-home'></i>
+                        HOME
+                    </a>
+                </li>
+                <li><a class="dropdown-item" href="./profile.php"><i class='fas fa-cog'></i>
+                        Edit Profile</a></li>
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
                 <li>
-                    <form method="POST" action="../code.php" >
-                        <button type='submit' name='logout_btn' class="dropdown-item">Log Out</button>
+                    <form method="POST" action="../code.php">
+                        <button type='submit' name='logout_btn' class="dropdown-item">
+                            <i class='fas fa-sign-out-alt'></i>
+                            Log Out
+                        </button>
                     </form>
                 </li>
             </ul>

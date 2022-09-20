@@ -9,7 +9,10 @@
 
 
         if($name === '' || $slug === ''){
-            $_SESSION['message'] = 'Please fill in ( Name & Slug ) !!';
+            $_SESSION['message'] = [
+                'content' => 'Please fill in ( Name & Slug ) !!',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_category.php'; </script>";
             exit(0);
         }
@@ -19,7 +22,10 @@
         $testResult = mysqli_query($connection, $textQuery);
 
         if(mysqli_num_rows($testResult) > 0){
-            $_SESSION['message'] = "This category already exist :)";
+            $_SESSION['message'] = [
+                'content' => "This category already exist :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_category.php'; </script>";
             exit(0);
         }
@@ -29,11 +35,17 @@
 
 
         if($Result){
-            $_SESSION['message'] = "Added Seccussfully :)";
+            $_SESSION['message'] = [
+                'content' => "Added Seccussfully :)",
+                'type' => 'seccuss',
+            ];
             echo "<script type='text/javascript'>  window.location='./view_category.php'; </script>";
             exit(0);
         }else{
-            $_SESSION['message'] = "Something went wrong, Please Try again :)";
+            $_SESSION['message'] = [
+                'content' => "Something went wrong, Please Try again :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./add_category.php'; </script>";
             exit(0);
         }

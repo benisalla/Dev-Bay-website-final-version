@@ -15,28 +15,40 @@
 
 
         if($Fname === '' || $Lname === '' ||$Email === '' ||$Pass === '' ||$ConfPass === ''){
-            $_SESSION['message'] = 'Please fill in all the fields !!';
+            $_SESSION['message'] = [
+                'content' => 'Please fill in all the fields !!',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }
 
 
         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['message'] = "email is not in a proper form :)";
+            $_SESSION['message'] = [
+                'content' => 'email is not in a proper form :)',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }
 
 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$Fname)) {
-            $_SESSION['message'] = "first name should contain just letters and white-space :)";
+            $_SESSION['message'] = [
+                'content' => 'first name should contain just letters and white-space :)',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }
 
 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$Lname)) {
-            $_SESSION['message'] = "last name should contain just letters and white-space :)";
+            $_SESSION['message'] = [
+                'content' => 'last name should contain just letters and white-space :)',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }
@@ -49,14 +61,20 @@
 
 
         if(!$upper || !$lower || !$nbr || !$specialChars || strlen($Pass) < 8) {
-            $_SESSION['message'] = "ths password is too weak :)";
+            $_SESSION['message'] = [
+                'content' => 'ths password is too weak :)',
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }
 
 
         if($Pass !== $ConfPass){
-                $_SESSION['message'] = "you didn't conform password correctly :)";
+                $_SESSION['message'] = [
+                    'content' => "You didn't conform password correctly :)",
+                    'type' => 'alert',
+                ];
                 echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
                 exit(0);
         }
@@ -66,20 +84,30 @@
         $isEmailExistResult = mysqli_query($connection, $isEmailExistQuery);
 
         if(mysqli_num_rows($isEmailExistResult) > 0){
-            $_SESSION['message'] = "This email already exist :)";
+            $_SESSION['message'] = [
+                'content' => "This email already exist :)",
+                'type' => 'alert',
+            ];
             echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
             exit(0);
         }else{
-            $registringQuery = "insert into users (firstname,lastname,image,email,password) values ('$Fname','$Lname','$img','$Email','$Pass')";
+            $encPass = crypt($Pass,"dev-bay");
+            $registringQuery = "insert into users (firstname,lastname,image,email,password) values ('$Fname','$Lname','$img','$Email','$encPass')";
             $registringResult = mysqli_query($connection, $registringQuery);
 
             if( $registringResult ){
                 move_uploaded_file($_FILES['image']['tmp_name'],'../img/users/'.$img);
-                $_SESSION['message'] = "Registered Seccussfully :)";
+                $_SESSION['message'] = [
+                    'content' => "Registered Seccussfully :)",
+                    'type' => 'seccuss',
+                ];
                 echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
                 exit(0);
             }else{
-                $_SESSION['message'] = "something went wrong during registration :)";
+                $_SESSION['message'] = [
+                    'content' => "something went wrong during registration :)",
+                    'type' => 'alert',
+                ];
                 echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
                 exit(0);
             }

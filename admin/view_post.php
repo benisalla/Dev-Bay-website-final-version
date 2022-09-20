@@ -2,6 +2,17 @@
 include('./authCode.php');
 include('../tellMessage.php');
 include('./includes/header.php');
+
+$allRows = 0;
+$Query = "select count(*) as numOfRows from post";
+$Result = mysqli_query($connection, $Query);
+if (mysqli_num_rows($Result) > 0) {
+    $arr = mysqli_fetch_array($Result);
+    $allRows = $arr['numOfRows'];
+}
+
+$num_rows = 4;
+
 ?>
 
 <div class="container-fluid px-4">
@@ -27,7 +38,6 @@ include('./includes/header.php');
                             <th>ID</th>
                             <th>Author</th>
                             <th>Category</th>
-                            <th>Slug</th>
                             <th>Image</th>
                             <th>Updated_at</th>
                             <th>Edit</th>
@@ -35,44 +45,43 @@ include('./includes/header.php');
                         </thead>
                         <tbody>
                             <?php
-                            $Query = "select * from post";
+                            $Query = "select * from post ORDER by id desc LIMIT $num_rows";
                             $Result = mysqli_query($connection, $Query);
                             ?>
                             <?php if (mysqli_num_rows($Result) > 0) : ?>
                                 <?php foreach ($Result as $post) : ?>
-                                    <tr>
+                                    <tr class="data_class">
                                         <td>
                                             <?= $post['state'] == '1' ? "<i class='fa fa-eye' style='color: green;'></i>" :
-                                                                        "<i class='fa fa-eye-slash' style='color: red;'></i>"  ?>
+                                                "<i class='fa fa-eye-slash' style='color: red;'></i>"  ?>
                                         </td>
                                         <td><?= $post['id']; ?></td>
-                                        <td><?php 
+                                        <td><?php
                                             $user_id = $post['user_id'];
                                             $AuthorQuery = "select * from users where id = '$user_id'";
                                             $AuthorResult = mysqli_query($connection, $AuthorQuery);
-                                            if(mysqli_num_rows($AuthorResult) > 0){
-                                                foreach($AuthorResult as $Author){
-                                                    echo $Author['firstname']." ".$Author['lastname'];
+                                            if (mysqli_num_rows($AuthorResult) > 0) {
+                                                foreach ($AuthorResult as $Author) {
+                                                    echo $Author['firstname'] . " " . $Author['lastname'];
                                                 }
-                                            }else{
+                                            } else {
                                                 echo "UnKnown";
                                             }
-                                        ?></td>
+                                            ?></td>
                                         <td><?php
                                             $category_id = $post['category_id'];
                                             $CategoryQuery = "select * from category where id = '$category_id'";
                                             $CategoryResult = mysqli_query($connection, $CategoryQuery);
-                                            if(mysqli_num_rows($CategoryResult) > 0){
-                                                foreach($CategoryResult as $category){
+                                            if (mysqli_num_rows($CategoryResult) > 0) {
+                                                foreach ($CategoryResult as $category) {
                                                     echo $category['name'];
                                                 }
-                                            }else{
+                                            } else {
                                                 echo "UnKnown";
                                             }
-                                        ?></td>
-                                        <td><?= $post['slug'] ?></td>
+                                            ?></td>
                                         <td>
-                                            <img src="../img/blog/<?= $post['image'] ?>" alt="post's image" width="50px" height="50px">
+                                            <img src="../img/blog/<?= $post['image']!= '' ? $post['image'] : 'event.png'?>" alt="post's image" width="50px" height="50px">
                                         </td>
                                         <td><?= $post['updated_at'] ?></td>
                                         <td>
@@ -101,6 +110,21 @@ include('./includes/header.php');
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="d-flex flex-row justify-content-between align-items-center mb-2">
+            <div class="shortHint">
+                Show More ...
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary display_more"><i class="fa fa-chevron-down"></i></button>
+                <input type="hidden" id="numOfRows" value="0">
+                <input type="hidden" id="allRows" value="<?= $allRows ?>">
+                <input type="hidden" id="fileName" value="fetchData_post.php">
             </div>
         </div>
 
