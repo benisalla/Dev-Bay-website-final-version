@@ -28,25 +28,23 @@
 
             <div class="signin-form">
                 <h2 class="form-title">Sign In</h2>
-                <form method="POST" action="loginProcess.php" class="register-form" id="login-form">
+                <div class="register-form" id="login-form">
                     <div class="form-group">
                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input value="<?= isset($_COOKIE['log-in-email']) ? $_COOKIE['log-in-email'] : "" ?>" type="email" name="email" id="your_name" placeholder="Your Email" />
+                        <input value="<?= isset($_COOKIE['log-in-email']) ? $_COOKIE['log-in-email'] : "" ?>" type="email" id="log_in_email" placeholder="Your Email" />
                     </div>
                     <div class="form-group">
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input value="<?= isset($_COOKIE['log-in-password']) ? $_COOKIE['log-in-password'] : "" ?>" type="password" name="password" id="your_pass" placeholder="Password" />
+                        <input value="<?= isset($_COOKIE['log-in-password']) ? $_COOKIE['log-in-password'] : "" ?>" type="password" id="log_in_password"/>
                     </div>
                     <div class="form-group">
                         <input <?= isset($_COOKIE['log-in-email']) && isset($_COOKIE['log-in-password']) ? "checked" : "" ?> type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                     </div>
-                    <button class="btn fs-2 spatiel-btn w-50 rounded-3 p-2 mt-3">
-                        <!-- <i class="display-flex-center zmdi zmdi-check"></i> -->
-                        <!-- <i class="display-flex-center zmdi zmdi-close"></i> -->
-                        Log In
+                    <button class="btn fs-2 spatiel-btn w-75 rounded-3 m-3 text-nowrap" id="log_in_btn">
+                        Log in
                     </button>
-                </form>
+                </div>
 
                 <div class="social-login">
                     <span class="social-label">Or login with</span>

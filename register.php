@@ -58,7 +58,7 @@ if (isset($_SESSION['user_auth'])) {
             </div>
             <div class="signup-image">
                 <figure><img src="./log_files/images/signUp.png" alt="sing up image"></figure>
-                <a href="./login.php" class="signup-image-link">I am already member</a>
+                <a href="./login.php" class="signup-image-link">I already have an account</a>
             </div>
         </div>
     </div>

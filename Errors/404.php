@@ -19,8 +19,8 @@
 			<div class="notfound-404">
 				<h1>404</h1>
 			</div>
-			<h2>we are sorry, but the page you requested was not found</h2>
-			<a href="#" class="home-btn">Go Home</a>
+			<h2>We apologize, but the page you were seeking for could not be found</h2>
+			<a href="../index.php" class="home-btn">Go Home</a>
 			<a href="#" class="contact-btn">Contact us</a>
 			<div class="notfound-social">
 				<a href="#"><i class="fa fa-facebook"></i></a>

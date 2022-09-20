@@ -2,29 +2,21 @@
     session_start();
     include('./admin/config/databaseConfig.php');
 
-    if(isset($_POST['signin'])){
+    if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['rememberme'])){
 
         $Email = mysqli_real_escape_string($connection ,$_POST['email']);
         $Pass = mysqli_real_escape_string($connection ,$_POST['password']);
-        $remember = $_POST['remember-me'];
+        $rememberme = $_POST['rememberme'];
 
 
         if($Email === '' || $Pass === ''){
-            $_SESSION['message'] = [
-                'content' => 'Please fill in all the fields !!',
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
+            echo "failure";
             exit(0);
         }
 
 
         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['message'] = [
-                'content' => "email is not in a proper form :)",
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
+            echo "failure";
             exit(0);
         }
 
@@ -35,7 +27,7 @@
 
         if(mysqli_num_rows($Result) > 0){
 
-            if($remember == "on"){
+            if($rememberme == "on"){
                 setcookie("log-in-email",$Email,time()+(60*60*24));
                 setcookie("log-in-password",$Pass,time()+(60*60*24));
             }else{
@@ -68,21 +60,17 @@
                     'content' => "Welcome To DashBoard :)",
                     'type' => 'seccuss',
                 ];
-                echo "<script type='text/javascript'>  window.location='./admin/index.php'; </script>";
+                echo "seccuss-admin";
                 exit(0);
             }elseif($_SESSION['user_Role'] == '0'){
                 $_SESSION['message'] = [
                     'content' => "You Are Loged in Seccussfully :)",
                     'type' => 'seccuss',
                 ];
-                echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
+                echo "seccuss-user";
                 exit(0);
             }else{
-                $_SESSION['message'] = [
-                    'content' => "this category is not available now :)",
-                    'type' => 'alert',
-                ];
-                echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
+                echo "failure";
                 exit(0);
             }
 
@@ -91,12 +79,12 @@
                 'content' => "email or password is incorrect :)",
                 'type' => 'alert',
             ];
-            echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
+            echo "failure";
             exit(0);
         }
 
     }else{
-        echo "<script type='text/javascript'>  window.location='./login.php'; </script>";
+        echo "<script type='text/javascript'>  window.location='./Errors/404.php'; </script>";
         exit(0);
     }
 

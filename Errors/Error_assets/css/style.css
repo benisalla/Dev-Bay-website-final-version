@@ -6,6 +6,8 @@
 body {
   padding: 0;
   margin: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #notfound {
@@ -58,7 +60,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 220px;
+  font-size: 210px;
   font-weight: 900;
   margin: 0px;
   color: #fff;
