@@ -4,31 +4,30 @@ include('../admin/config/databaseConfig.php');
 $id = $_SESSION['user']['id'];
 
 
-echo "from the profile_process";
-// echo $_FILES['image']['name'];
-var_dump($_POST['image']);
-if (($_POST['profile_image'])) {
-    echo "seccuss";
-    // $image = $_FILES['image']['name'];
+if ($_FILES['image']) {
+    $image = $_FILES['image']['name'];
     echo($_POST['profile_image']);
-    // $img = str_replace(' ', '', explode('.', $image)[0] . rand() . "." . pathinfo($image, PATHINFO_EXTENSION));
+    $img = str_replace(' ', '', explode('.', $image)[0] . rand() . "." . pathinfo($image, PATHINFO_EXTENSION));
 
-    // $query = "select * from users where id='$id'";
-    // $result = mysqli_query($connection, $query);
+    $query = "select * from users where id='$id'";
+    $result = mysqli_query($connection, $query);
 
-    // if (mysqli_num_rows($result) > 0) {
-    //     foreach ($result as $user) {
-    //         if (unlink("./img/users/" . $user['image'])) {
-    //         }
-    //     }
-    // }
+    if (mysqli_num_rows($result) > 0) {
+        foreach ($result as $user) {
+            if (unlink("../img/users/" . $user['image'])) {
+            }
+        }
+    }
 
-    // $query = "update users set image = '$img' where id='$id'";
-    // $result = mysqli_query($connection, $query);
+    $query = "update users set image = '$img' where id='$id'";
+    $result = mysqli_query($connection, $query);
 
-    // if ($result) {
-    //     move_uploaded_file($_FILES['image']['tmp_name'], './img/users/' . $img);
-    // }
+    if ($result) {
+        move_uploaded_file($_FILES['image']['tmp_name'], '../img/users/' . $img);
+        echo "../img/users/$img";
+        exit(0);
+    }
+    echo "__FAILURE__";
 }
 
 

@@ -56,7 +56,7 @@
                             <form method="POST" action="./code.php" >
                                 <button type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
                                 <a href="./feedback.php" class="dropdown-item PressedLink"><i class="fa fa-comment text-primary setting_icons"></i> FeedBack</a>
-                                <a href="./profile.php" class="dropdown-item PressedLink"><i class="fa fa-user text-primary setting_icons"></i> Profile</a>
+                                <a href="./Set_Profile/profile.php" class="dropdown-item PressedLink"><i class="fa fa-user text-primary setting_icons"></i> Profile</a>
                             </form>                        
                         <?php else: ?>
                             <a href="./login.php" class="dropdown-item PressedLink"><i class="fa fa-sign-in-alt text-primary setting_icons"></i> Sign-In</a>

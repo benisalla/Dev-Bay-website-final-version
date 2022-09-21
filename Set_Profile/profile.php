@@ -116,7 +116,7 @@ include('../tellMessage.php');
                             if (mysqli_num_rows($result)) :
                                 foreach ($result as $user) :
                                     $img = $user['image']; ?>
-                                    <img class="img-account-profile rounded-circle mb-2" src="../img/users/<?= $img ?>" alt="">
+                                    <img class="img-account-profile rounded-circle mb-2" src="../img/users/<?= $img ?>" id="profile_image" alt="">
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <img class="img-account-profile rounded-circle mb-2" src="../img/users/profile.png" alt="">
