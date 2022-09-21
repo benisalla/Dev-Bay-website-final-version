@@ -6,7 +6,6 @@ $id = $_SESSION['user']['id'];
 
 if ($_FILES['image']) {
     $image = $_FILES['image']['name'];
-    echo($_POST['profile_image']);
     $img = str_replace(' ', '', explode('.', $image)[0] . rand() . "." . pathinfo($image, PATHINFO_EXTENSION));
 
     $query = "select * from users where id='$id'";
@@ -31,58 +30,52 @@ if ($_FILES['image']) {
 }
 
 
+// ------------------------------------------------------------------------------------------------------------
 
-if (isset($_POST['save_btn'])) {
+
+if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) && isset($_POST['profession'])) {
 
     $Fname = mysqli_real_escape_string($connection, $_POST['fname']);
     $Lname = mysqli_real_escape_string($connection, $_POST['lname']);
     $Email = mysqli_real_escape_string($connection, $_POST['email']);
     $Prof = mysqli_real_escape_string($connection, $_POST['profession']);
-    $Pass = mysqli_real_escape_string($connection, $_POST['pass']);
-    $ConfPass = mysqli_real_escape_string($connection, $_POST['cpass']);
+    $Pass = mysqli_real_escape_string($connection, $_POST['password']);
+    $ConfPass = mysqli_real_escape_string($connection, $_POST['conf_password']);
 
-
-    if ($Fname === '' || $Lname === '' || $Email === '' || ($Pass === '' && $ConfPass !== '') || ($Pass !== '' && $ConfPass === '') || $Prof === '') {
-        $_SESSION['message'] = [
-            'content' => 'Please fill in all the fields (except password is optional) !!',
-            'type' => 'alert',
-        ];
-        echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+    if ($Fname === '' || $Lname === '' || $Email === '' || $Prof === '') {
+        echo "ERROR_FILL";
         exit(0);
     }
 
+    if ($Pass !== $ConfPass) {
+        echo "ERROR_CONF_PASS";
+        exit(0);
+    }
 
     if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['message'] = [
-            'content' => "email is not in a proper form :)",
-            'type' => 'alert',
-        ];
-        echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+        echo "ERROR_EMAIL";
         exit(0);
     }
 
 
     if (!preg_match("/^[a-zA-Z-' ]*$/", $Fname)) {
-        $_SESSION['message'] = [
-            'content' => "first name should contain just letters and white-space :)",
-            'type' => 'alert',
-        ];
-        echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+        echo "ERROR_FNAME";
         exit(0);
     }
 
 
     if (!preg_match("/^[a-zA-Z-' ]*$/", $Lname)) {
-        $_SESSION['message'] = [
-            'content' => "last name should contain just letters and white-space :)",
-            'type' => 'alert',
-        ];
-        echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+        echo "ERROR_LNAME";
+        exit(0);
+    }
+
+    if (!preg_match("/^[a-zA-Z-' ]*$/", $Prof)) {
+        echo "ERROR_PROF";
         exit(0);
     }
 
 
-    if ($Pass !== '' || $ConfPass !== '') {
+    if ($Pass != '' && $ConfPass != '') {
         $upper = preg_match('@[A-Z]@', $Pass);
         $lower = preg_match('@[a-z]@', $Pass);
         $nbr    = preg_match('@[0-9]@', $Pass);
@@ -90,21 +83,7 @@ if (isset($_POST['save_btn'])) {
 
 
         if (!$upper || !$lower || !$nbr || !$specialChars || strlen($Pass) < 8) {
-            $_SESSION['message'] = [
-                'content' => "ths password is too weak :)",
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
-            exit(0);
-        }
-
-
-        if ($Pass !== $ConfPass) {
-            $_SESSION['message'] = [
-                'content' => "you didn't conform password correctly :)",
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./register.php'; </script>";
+            echo "ERROR_WEAK_PASS";
             exit(0);
         }
 
@@ -114,18 +93,10 @@ if (isset($_POST['save_btn'])) {
         $Result = mysqli_query($connection, $Query);
 
         if ($Result) {
-            $_SESSION['message'] = [
-                'content' => "UpDated Seccussfully :)",
-                'type' => 'seccuss',
-            ];
-            echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+            echo "seccuss";
             exit(0);
         } else {
-            $_SESSION['message'] = [
-                'content' => "something went wrong during registration :)",
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+            echo "failure";
             exit(0);
         }
     } else {
@@ -133,18 +104,10 @@ if (isset($_POST['save_btn'])) {
         $Result = mysqli_query($connection, $Query);
 
         if ($Result) {
-            $_SESSION['message'] = [
-                'content' => "UpDated Seccussfully :)",
-                'type' => 'seccuss',
-            ];
-            echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+            echo "seccuss";
             exit(0);
         } else {
-            $_SESSION['message'] = [
-                'content' => "something went wrong during registration :)",
-                'type' => 'alert',
-            ];
-            echo "<script type='text/javascript'>  window.location='./profile.php'; </script>";
+            echo "failure";
             exit(0);
         }
     }

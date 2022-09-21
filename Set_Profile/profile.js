@@ -42,4 +42,78 @@
             });
         }
     });
+
+    $(document).on('click','#save_btn', ()=>{
+        const $email = $("#email").val();
+        const $fname = $("#fname").val();
+        const $lname = $("#lname").val();
+        const $profession = $("#profession").val();
+        const $password = $("#password").val();
+        const $conf_password = $("#conf_password").val();
+
+        $.ajax({
+            type: "post",
+            url: "profile_process.php",
+            data: {
+                email: $email,
+                fname: $fname,
+                lname: $lname,
+                profession: $profession,
+                password: $password,
+                conf_password: $conf_password
+            },
+            beforeSend: () => {
+                $("#save_btn").html("<i class='fa fa-spinner rotating fs-4 fw-600'></i>");
+            },
+            success: function (response) {
+                console.log(response);
+                setTimeout(() => {
+                    if(response == "seccuss"){
+                        $("#save_btn").html("<i class='fa fa-check fs-4 fw-600' style='color: green !important;'></i>");
+                    }else{
+                        $("#save_btn").html("<i class='fa fa-times fs-4 fw-600' style='color: red !important;'></i>");
+
+                        if(response == "ERROR_LNAME"){
+                            $("#lname").css("background-color","rgb(255 0 0 / 50%)");
+                        }else if(response == "ERROR_FNAME"){
+                            $("#fname").css("background-color","rgb(255 0 0 / 50%)");
+                        }else if(response == "ERROR_PROF"){
+                            $("#profession").css("background-color","rgb(255 0 0 / 50%)");
+                        }else if(response == "ERROR_FILL"){
+                            if($("#lname") == ''){
+                                $("#lname").css("background-color","rgb(255 0 0 / 50%)");
+                            }else if($("#fname") == ''){
+                                $("#fname").css("background-color","rgb(255 0 0 / 50%)");
+                            }else if($("#email") == ''){
+                                $("#email").css("background-color","rgb(255 0 0 / 50%)");
+                            }else{
+                                $("#profession").css("background-color","rgb(255 0 0 / 50%)");
+                            }
+                        }else if(response == "ERROR_EMAIL"){
+                            $("#email").css("background-color","rgb(255 0 0 / 50%)");
+                        }else if(response == "ERROR_CONF_PASS"){
+                            $("#conf_password").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#password").css("background-color","rgb(255 0 0 / 50%)");
+                        }
+                        
+                    }
+                },2000);
+
+                setTimeout(() => {
+                    $("#save_btn").html("SAVE");
+                },3500);
+
+                setTimeout(() => {
+                    $("#fname").css("background-color","");
+                    $("#lname").css("background-color","");
+                    $("#email").css("background-color","");
+                    $("#profession").css("background-color","");
+                    $("#password").css("background-color","");
+                    $("#conf_password").css("background-color","");
+                }, 4500);
+            }
+        });
+
+    });
+
 })(jQuery);

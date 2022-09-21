@@ -102,7 +102,7 @@ include('../tellMessage.php');
     <div class="container-xl px-4 mt-4">
         <div class="row">
             <h4>Edit Your Profile
-                <a href='./index.php'><button class="btn btn-primary float-end rounded">Back</button></a>
+                <a href='../index.php'><button class="btn btn-primary float-end rounded">Back</button></a>
             </h4>
             <div class="col-xl-4">
                 <div class="card mb-4 mb-xl-0">
@@ -124,7 +124,7 @@ include('../tellMessage.php');
 
                             <input type="file" name="image" id="image" multiple style="display: none;">
 
-                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                            <div class="small font-italic text-muted mb-4">(JPG,PNG,JPEG) and no larger than 5 MB</div>
                         </div>
                         <button class="btn fs-4 spatiel-btn m-1" id="UpLoad">
                             <i class='fa fa-upload fs-4 fw-600' style='color: white;'></i>
@@ -136,21 +136,21 @@ include('../tellMessage.php');
                 <div class="card mb-4">
                     <div class="card-header text-center">Your Information</div>
                     <div class="card-body">
-                        <form action="./profile.php" method="POST">
+                        <div>
 
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="Fname">First name</label>
-                                    <input value="<?= $_SESSION['user']['firstname'] ?>" name="fname" class="form-control" id="Fname" class="fname" type="text" placeholder="Enter your first name">
+                                    <label class="small mb-1" for="fname">First name</label>
+                                    <input value="<?= $_SESSION['user']['firstname'] ?>" class="form-control" id="fname" class="fname" type="text" placeholder="Enter your first name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="Lname">Last name</label>
-                                    <input value="<?= $_SESSION['user']['lastname'] ?>" name="lname" class="form-control" id="Lname" class="lname" type="text" placeholder="Enter your last name">
+                                    <label class="small mb-1" for="lname">Last name</label>
+                                    <input value="<?= $_SESSION['user']['lastname'] ?>" class="form-control" id="lname" class="lname" type="text" placeholder="Enter your last name">
                                 </div>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="Profession">Profession/job</label>
+                                    <label class="small mb-1" for="profession">Profession/job</label>
                                     <?php
                                     $id = $_SESSION['user']['id'];
                                     $query = "select * from users where id = '$id'";
@@ -158,35 +158,35 @@ include('../tellMessage.php');
                                     if (mysqli_num_rows($result)) :
                                         foreach ($result as $user) :
                                             $prof = $user['profession']; ?>
-                                            <input value="<?= $prof != '' ? $prof : '' ?>" class="form-control" name="profession" id="Profession" type="text" placeholder="Enter your profession name">
+                                            <input value="<?= $prof != '' ? $prof : '' ?>" class="form-control" id="profession" type="text" placeholder="Enter your profession name">
                                         <?php endforeach; ?>
                                     <?php else : ?>
-                                        <input class="form-control" name="profession" id="Profession" type="text" placeholder="Enter your profession name">
+                                        <input class="form-control" id="profession" type="text" placeholder="Enter your profession name">
                                     <?php endif; ?>
 
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                <input value="<?= $_SESSION['user']['email'] ?>" name="email" class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address">
+                                <label class="small mb-1" for="email">Email</label>
+                                <input value="<?= $_SESSION['user']['email'] ?>" class="form-control" id="email" type="email" placeholder="Enter your email address">
                             </div>
                             <div class="small font-italic text-muted mb-1">fill these fields if you want to change the password</div>
                             <div class="row gx-3 mb-3">
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="Pass">Password</label>
-                                    <input class="form-control" name="pass" id="Pass" type="text" placeholder="Enter your password address">
+                                    <input class="form-control" id="password" type="text" placeholder="Enter your password address">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="Cpass">Confirm Password</label>
-                                    <input class="form-control" name="cpass" id="Cpass" type="text" placeholder="Enter your password address">
+                                    <label class="small mb-1" for="conf_password">Confirm Password</label>
+                                    <input class="form-control" id="conf_password" type="text" placeholder="Enter your password address">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button class="btn fs-4 spatiel-btn m-1" id="save_btn">
-                                    Save
+                                    SAVE
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
