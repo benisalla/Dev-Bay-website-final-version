@@ -38,3 +38,31 @@
         <!---------------------------- Carousel ----------------------------->
         <?php include('./includes/carousel.php'); ?>
     </div>
+
+
+
+    <?php
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $IP = $_SERVER['HTTP_CLIENT_IP'];
+    } else if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $IP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $IP = $_SERVER['REMOTE_ADDR'];
+    }
+    $ipdat = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip='$IP'"));
+    $city = $ipdat->geoplugin_regionName;
+    $country = $ipdat->geoplugin_countryName;
+    $continent = $ipdat->geoplugin_continentName;
+
+
+    if (!isset($_SESSION['visitor'])) {
+        $_SESSION['visitor'] = '1';
+        $num_of_visitors = 0;
+        $Query = "select * from visitors_counter where visitor_ip = '$IP' and visitor_country = '$country'";
+        $Result = mysqli_query($connection, $Query);
+        if (mysqli_num_rows($Result) == 0) {
+            $insertQuery = "INSERT INTO visitors_counter (visitor_ip, visitor_country,visitor_region , visitor_continent) VALUES ('$IP','$country','$city','$continent')";
+            $insertResult = mysqli_query($connection, $insertQuery);
+        }
+    }
+    ?>

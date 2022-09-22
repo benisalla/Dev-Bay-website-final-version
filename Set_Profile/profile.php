@@ -102,7 +102,7 @@ include('../tellMessage.php');
     <div class="container-xl px-4 mt-4">
         <div class="row">
             <h4>Edit Your Profile
-                <a href='../index.php'><button class="btn btn-primary float-end rounded">Back</button></a>
+                <a href='<?= $_SESSION['user_Role'] == '1'? '../admin/index.php' : '../index.php' ?>'><button class="btn btn-primary float-end rounded">Back</button></a>
             </h4>
             <div class="col-xl-4">
                 <div class="card mb-4 mb-xl-0">
@@ -134,7 +134,7 @@ include('../tellMessage.php');
             </div>
             <div class="col-xl-8">
                 <div class="card mb-4">
-                    <div class="card-header text-center">Your Information</div>
+                    <div class="card-header text-center" id="title_and_message">Your Information</div>
                     <div class="card-body">
                         <div>
 

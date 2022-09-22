@@ -23,6 +23,7 @@ if ($_FILES['image']) {
 
     if ($result) {
         move_uploaded_file($_FILES['image']['tmp_name'], '../img/users/' . $img);
+        $_SESSION['user']['image'] = $img;
         echo "../img/users/$img";
         exit(0);
     }

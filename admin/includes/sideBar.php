@@ -1,5 +1,5 @@
 <div id="layoutSidenav_nav">
-    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <nav class="sb-sidenav accordion sb-sidenav-dark bg-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
@@ -76,27 +76,29 @@
                 <div class="sb-sidenav-menu-heading">Messages</div>
                 <a class="nav-link" href="./view_email.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-envelope" style='color: white;'></i></div>
-                    Requists
+                    Requests
                 </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
+                <a class="nav-link" href="./unseen_requests.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table" style='color: white;'></i></div>
+                    Unseen Requests
                 </a>
 
 
                 <div class="sb-sidenav-menu-heading">Statistics In Details</div>
                 <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area" style='color: white;'></i></div>
                     Charts
                 </a>
                 <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-table" style='color: white;'></i></div>
                     Tables
                 </a>
             </div>
         </div>
-        <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
+
+
+        <div class="sb-sidenav-footer text-white">
+            <div class="small text-white">Logged in as:</div>
             DEV-BAY Admin
         </div>
     </nav>

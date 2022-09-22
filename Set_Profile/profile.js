@@ -9,7 +9,6 @@
         const $ext = $file['type'].split('/')[1];
         var formData = new FormData();
         formData.append('image',$file);
-        console.log($ext.toString().toLowerCase());
 
         if(($file['size']/(1024*1024) < 5) 
             && ($type == 'image') 
@@ -51,6 +50,7 @@
         const $password = $("#password").val();
         const $conf_password = $("#conf_password").val();
 
+
         $.ajax({
             type: "post",
             url: "profile_process.php",
@@ -66,36 +66,43 @@
                 $("#save_btn").html("<i class='fa fa-spinner rotating fs-4 fw-600'></i>");
             },
             success: function (response) {
-                console.log(response);
                 setTimeout(() => {
                     if(response == "seccuss"){
                         $("#save_btn").html("<i class='fa fa-check fs-4 fw-600' style='color: green !important;'></i>");
                     }else{
                         $("#save_btn").html("<i class='fa fa-times fs-4 fw-600' style='color: red !important;'></i>");
-
+                        $("#title_and_message").css("color","red");
                         if(response == "ERROR_LNAME"){
                             $("#lname").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#title_and_message").text("last name should contain letters and white-space");
                         }else if(response == "ERROR_FNAME"){
                             $("#fname").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#title_and_message").text("first name should contain letters and white-space");
                         }else if(response == "ERROR_PROF"){
                             $("#profession").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#title_and_message").text("profession should contain letters and white-space");
                         }else if(response == "ERROR_FILL"){
                             if($("#lname") == ''){
                                 $("#lname").css("background-color","rgb(255 0 0 / 50%)");
+                                $("#title_and_message").text("fill in the last name");
                             }else if($("#fname") == ''){
                                 $("#fname").css("background-color","rgb(255 0 0 / 50%)");
+                                $("#title_and_message").text("fill in the first name");
                             }else if($("#email") == ''){
                                 $("#email").css("background-color","rgb(255 0 0 / 50%)");
+                                $("#title_and_message").text("fill in the email");
                             }else{
                                 $("#profession").css("background-color","rgb(255 0 0 / 50%)");
+                                $("#title_and_message").text("fill in the profession");
                             }
                         }else if(response == "ERROR_EMAIL"){
                             $("#email").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#title_and_message").text("email form is not properly correct");
                         }else if(response == "ERROR_CONF_PASS"){
                             $("#conf_password").css("background-color","rgb(255 0 0 / 50%)");
                             $("#password").css("background-color","rgb(255 0 0 / 50%)");
+                            $("#title_and_message").text("make sure to confirm your password correctly");
                         }
-                        
                     }
                 },2000);
 
@@ -110,7 +117,9 @@
                     $("#profession").css("background-color","");
                     $("#password").css("background-color","");
                     $("#conf_password").css("background-color","");
-                }, 4500);
+                    $("#title_and_message").text("Your Information");
+                    $("#title_and_message").css("color","");
+                }, 6000);
             }
         });
 

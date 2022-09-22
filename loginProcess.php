@@ -53,6 +53,7 @@
                 'lastname' => $user['lastname'],
                 'id' => $user['id'],
                 'email' => $user['email'],
+                'image' => $user['image'],
             ];
 
             if($_SESSION['user_Role'] == '1'){

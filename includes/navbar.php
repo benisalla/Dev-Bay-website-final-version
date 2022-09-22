@@ -55,7 +55,7 @@
                         <?php elseif($_SESSION['user_Role'] == '0'): ?>
                             <form method="POST" action="./code.php" >
                                 <button type="submit" name="logout_btn" class="dropdown-item PressedLink"><i class="fa fa-sign-out-alt text-primary setting_icons"></i> Log-Out</button>
-                                <a href="./feedback.php" class="dropdown-item PressedLink"><i class="fa fa-comment text-primary setting_icons"></i> FeedBack</a>
+                                <a href="./Set_testimonial/testimonial.php" class="dropdown-item PressedLink"><i class="fa fa-comment text-primary setting_icons"></i> FeedBack</a>
                                 <a href="./Set_Profile/profile.php" class="dropdown-item PressedLink"><i class="fa fa-user text-primary setting_icons"></i> Profile</a>
                             </form>                        
                         <?php else: ?>

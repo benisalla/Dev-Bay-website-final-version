@@ -60,7 +60,6 @@ include('./includes/header.php');
                                     <div class="btn-toolbar" role="toolbar">
                                         <div class="btn-group mb-4 d-flex align-items-center" style="height: 2rem;">
                                             <button type="button" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-envelope"></i></button>
-                                            <!-- <button type="button" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-envelope-open"></i></button> -->
                                             <button type="button" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-mail-forward"></i></button>
                                             <form action="./delete_email.php" method="POST">
                                                 <button type="submit" name="delete_btn" value="<?= $email['id'] ?>" class="btn btn-outline-primary waves-effect waves-light"><i class="fa fa-trash"></i></button>
