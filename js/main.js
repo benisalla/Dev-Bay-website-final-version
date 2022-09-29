@@ -11,12 +11,10 @@
         document.execCommand("copy");
         document.designMode = "off";
         $temp.remove();
-
         $("#copy-pop-up").addClass("copy-pop-up-active");
         setTimeout(() => {
             $("#copy-pop-up").removeClass("copy-pop-up-active");
         }, 2000);
-
     })
 
     var spinner = function () {
@@ -31,16 +29,12 @@
     new WOW().init();
 
     $(window).scroll(function () {
-
         if ($(this).width() >= 962) {
             $(".nav-link").css("color", "white")
-
         }
         if ($(this).scrollTop() > 45 && $(this).width() >= 992) {
             $(".nav-link").css("color", "#000066")
             $('.navbar').addClass('sticky-top shadow-sm');
-
-
         } else {
             $('.navbar').removeClass('sticky-top');
         }
@@ -143,7 +137,6 @@
         }
     });
 
-
     const $PressedLink = $(".PressedLink");
     const $NavbarCollapse = $(".navbar-collapse");
     const $toggleButton = $(".navbar-toggler");
@@ -152,7 +145,6 @@
         $toggleButton.addClass("collapsed");
         $NavbarCollapse.removeClass("show");
     })
-
 
     $('.PressedLink').on('click',(event) => { toggleNav($(event.target)); } );
 

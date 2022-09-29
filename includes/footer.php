@@ -58,9 +58,14 @@
                             <a class="text-light" href="#contact"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="text-light mb-0">VISIT US <i class="bi bi-map m-2" style="color:#06A3DA; font-size: 25px;"></i></h3>
+                        </div>
+                        <div class="mapouter">
+                            <div class="gmap_canvas" style="height: 300px; position: relative;">
+                                <iframe class="rounded-2" style="position: absolute;" width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=ensa%20fes&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>

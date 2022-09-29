@@ -5,17 +5,17 @@ include('./includes/header.php');
 ?>
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Users</h1>
+    <h1 class="mt-4">Categories</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">DashBoard</li>
-        <li class="breadcrumb-item">Users</li>
+        <li class="breadcrumb-item">Categories</li>
     </ol>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
 
                 <div class="card-header">
-                    <h4>Registered Users</h4>
+                    <h4>Categories</h4>
                 </div>
 
                 <div class="card-body">

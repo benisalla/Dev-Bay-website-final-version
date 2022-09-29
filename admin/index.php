@@ -46,7 +46,8 @@ include('./includes/header.php');
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                clients</div>
+                                clients
+                            </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800" data-toggle="counter-up">
                                 <?php
                                 $num_clients = 0;
@@ -134,8 +135,6 @@ include('./includes/header.php');
 
     <hr>
 
-
-
     <?php
 
     class post
@@ -156,7 +155,6 @@ include('./includes/header.php');
     $likeValues = [];
     $dislikeValues = [];
     $commentValues = [];
-
 
     $PostQuery = "select * from post where state = '1'";
     $PostResult = mysqli_query($connection, $PostQuery);
@@ -206,54 +204,53 @@ include('./includes/header.php');
         }
     }
 
-    $max_likeValue = max($likeValues);
-    $max_dislikeValue = max($dislikeValues);
-    $max_commentValue = max($commentValues);
+    $max_likeValue = max($likeValues) == 0 ? 1 : max($likeValues);
+    $max_dislikeValue = max($dislikeValues) == 0 ? 1 : max($dislikeValues);
+    $max_commentValue = max($commentValues) == 0 ? 1 : max($commentValues);
 
     arsort($postRanker, 0);
 
     ?>
 
     <div class="row justify-content-center">
+        <hr class="bg-dark m-2 mx-5 shadow" style="height: 2px;">
         <div class="col-lg-6 py-3 shadow my-2 rounded">
             <div class="font-weight-bold text-primary text-center">
                 MOST NOTICED POSTS
             </div>
         </div>
-        <hr class="bg-dark m-2 mx-5 shadow" style="height: 2px;">
+        <hr style="visibility: hidden;">
         <?php
 
-        $num = 4;
+        $num = (count($postRanker) >= 4) ? 4 : count($postRanker);
 
         for ($i = 0; $i < $num; $i++) :
             $post = $postInfo[array_keys($postRanker)[$i]];
         ?>
             <div class="col-lg-6 mb-4">
 
-
-
                 <div class="container shadow py-1 my-1 rounded">
                     <h4 class="small font-weight-bold text-center"><?= $post->title ?></h4>
 
                     <small>Reactions</small>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: <?= ($post->comments / $max_commentValue)*100 ?>%"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: <?= ($post->comments / $max_commentValue) * 100 ?>%"></div>
                     </div>
 
                     <small>Ups</small>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: <?= ($post->likes / $max_likeValue)*100 ?>%"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: <?= ($post->likes / $max_likeValue) * 100 ?>%"></div>
                     </div>
 
                     <small>Downs</small>
                     <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: <?= ($post->dislikes / $max_dislikeValue)*100 ?>%"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: <?= ($post->dislikes / $max_dislikeValue) * 100 ?>%"></div>
                     </div>
 
                     <div class="d-flex flex-row justify-content-between">
                         <ol class="d-flex flex-nowrap flex-row justify-content-end list-unstyled">
                             <li class="me-3 text-muted"><i class='fa fa-user me-1 text-primary'></i><?= $post->author ?></li>
-                            <li class="me-3"><a class="text-primary" href="#">More</a></li>
+                            <li class="me-3"><a class="text-muted post_more_btn" href="#">MORE<i class="fa fa-arrow-right post_more_arrow"></i></a></li>
                         </ol>
                         <ol class="d-flex flex-nowrap flex-row justify-content-end list-unstyled">
                             <li class="ms-3 text-primary"><i class='fa fa-comment me-1 text-primary'></i><?= $post->comments ?></li>
@@ -267,31 +264,72 @@ include('./includes/header.php');
     </div>
 
 
+    <div class="row justify-content-center">
+        <hr class="bg-dark m-2 mx-5 shadow" style="height: 2px;">
+        <div class="col-lg-6 py-3 shadow my-2 rounded">
+            <div class="font-weight-bold text-primary text-center">
+                DIV-BAY USERS' STATISTICS
+            </div>
+        </div>
+        <hr style="visibility: hidden;">
+        <?php
+        $admins = 0;
+        $Query = "select count(*) as numOfRows from users where role_as = '1'";
+        $Result = mysqli_query($connection, $Query);
+        if (mysqli_num_rows($Result) > 0) {
+            $arr = mysqli_fetch_array($Result);
+            $admins = $arr['numOfRows'];
+        }
 
+        $clints = 0;
+        $Query = "select count(*) as numOfRows from users where role_as = '0'";
+        $Result = mysqli_query($connection, $Query);
+        if (mysqli_num_rows($Result) > 0) {
+            $arr = mysqli_fetch_array($Result);
+            $clints = $arr['numOfRows'];
+        }
 
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">MOST ACTIVE CLIENTS</h6>
+        $followers = 0;
+        $Query = "select count(*) as numOfRows from users where role_as = '-1'";
+        $Result = mysqli_query($connection, $Query);
+        if (mysqli_num_rows($Result) > 0) {
+            $arr = mysqli_fetch_array($Result);
+            $followers = $arr['numOfRows'];
+        }
+
+        $TotalUsers = ($followers + $admins + $clints);
+        $admins = ($admins/$TotalUsers)*100;
+        $clints = ($clints/$TotalUsers)*100;
+        $followers = ($followers/$TotalUsers)*100;
+
+        ?>
+        <div class="col-lg-9 mb-4">
+            <div class="container shadow py-1 my-1 rounded d-flex justify-content-around">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="progress mb-4 flex-column-reverse" style="width: 50px; height: 330px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%; height: <?= $admins ?>%;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $clints ?>%; background-color: #e9ecef;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $followers ?>%; background-color: #e9ecef;"></div>
+                    </div>
+                    <h4 class="small font-weight-bold text-uppercase">Admins</span></h4>
                 </div>
-                <div class="card-body">
-                    <h4 class="small font-weight-bold">Client 1 <span class="float-right">20%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="progress flex-column-reverse mb-4" style="width: 50px; height: 330px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $admins ?>%; background-color: #e9ecef;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 100%; height: <?= $clints ?>%;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $followers ?>%; background-color: #e9ecef;"></div>
                     </div>
-                    <h4 class="small font-weight-bold">Client 2 <span class="float-right">40%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    <h4 class="small font-weight-bold text-uppercase">Clients</h4>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="progress mb-4 flex-column-reverse" style="width: 50px; height: 330px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $admins ?>%; background-color: #e9ecef;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 100%; height: <?= $clints ?>%; background-color: #e9ecef;"></div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%; height: <?= $followers ?>%;"></div>
                     </div>
-                    <h4 class="small font-weight-bold">Client 3 <span class="float-right">60%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Client 4 <span class="float-right">20%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <h4 class="small font-weight-bold text-uppercase">Followers</span></h4>
                 </div>
             </div>
         </div>

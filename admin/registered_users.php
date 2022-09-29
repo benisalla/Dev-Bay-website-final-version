@@ -47,7 +47,7 @@ $num_rows = 4;
                         </thead>
                         <tbody>
                             <?php
-                            $Query = "select * from users order by id desc limit $num_rows";
+                            $Query = "select * from users order by id limit $num_rows";
                             $Result = mysqli_query($connection, $Query);
                             ?>
                             <?php if (mysqli_num_rows($Result) > 0) : ?>

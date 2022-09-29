@@ -35,7 +35,7 @@
             </div>
             <hr class="MenuUnderLine">
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle PressedLink" data-bs-toggle="dropdown">Settings</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Settings</a>
                 <div class="dropdown-menu m-0">
                     <div class="dark_mode_btn">
                         <div class="btn-dark-light">

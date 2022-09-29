@@ -422,11 +422,11 @@ hr.MenuUnderLine::before {
 }
 
 .spatiel-btn:hover:after {
-    background-color: var(--light);
+    background-color: #dfe7eb;
 }
 
 .spatiel-btn:hover {
-    color: var(--midBlue);
+    color: #073e7e;
 }
 
 

@@ -92,7 +92,7 @@
     </style>
 </head>
 
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed scroll">
     <?php include('./includes/navBar-top.php'); ?>
     <div id="layoutSidenav">
         <?php include('./includes/sideBar.php'); ?>

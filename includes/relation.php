@@ -2,14 +2,25 @@
     <div class="container py-5 mb-5">
         <div class="bg-white">
             <div class="owl-carousel vendor-carousel">
-                <img src="./img/logos/logo1.png" alt="logo-1">
-                <img src="./img/logos/logo1.png" alt="logo-2">
-                <img src="./img/logos/logo1.png" alt="logo-3">
-                <img src="./img/logos/logo1.png" alt="logo-4">
-                <img src="./img/logos/logo1.png" alt="logo-5">
-                <img src="./img/logos/logo1.png" alt="logo-6">
-                <img src="./img/logos/logo1.png" alt="logo-7">
-                <img src="./img/logos/logo1.png" alt="logo-8">
+                <div style="width: 60px; height: 40px; " class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo1.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+                <div style="width: 60px; height: 40px; " class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo_1.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+                <div style="width: 60px; height: 40px; " class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo_2.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+                <div style="width: 60px; height: 40px;" class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo_3.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+                <div style="width: 60px; height: 40px; " class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo_4.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+                <div style="width: 60px; height: 40px; " class="d-flex align-self-center justify-content-center">
+                    <img src="./img/logos/logo_5.png" alt="logo-1" style="object-fit: cover;">
+                </div>
+
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@ $num_rows = 4;
             <div class="btn-toolbar float-end mb-3" role="toolbar">
                 <div class="btn-group">
                     <button type="button" class="btn btn-success"><i class="fa fa-inbox"></i></button>
-                    <button type="button" class="btn btn-success"><i class="fa fa-mark"></i></button>
+                    <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
                     <button type="button" class="btn btn-success"><i class="fa fa-trash"></i></button>
                 </div>
             </div>
