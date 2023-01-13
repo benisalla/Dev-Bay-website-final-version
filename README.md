@@ -217,10 +217,10 @@ Use this space to list resources you find helpful and would like to give credit 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/benisalla/Dev-Bay-website-final-version.svg?style=for-the-badge
-[contributors-url]: https://github.com/benisalla/Dev-Bay-website-final-version/edit/graphs/contributors
+[contributors-url]: https://github.com/benisalla/Dev-Bay-website-final-version
 
 [forks-shield]: https://img.shields.io/github/forks/benisalla/Dev-Bay-website-final-version.svg?style=for-the-badge
-[forks-url]: https://github.com/benisalla/Dev-Bay-website-final-version/network/members
+[forks-url]: https://github.com/benisalla/Dev-Bay-website-final-version
 
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/benisalla/Dev-Bay-website-final-version/stargazers
