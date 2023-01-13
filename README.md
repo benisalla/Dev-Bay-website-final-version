@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="https://user-images.githubusercontent.com/89405673/212366657-6d1ab2de-1c02-4050-9c6d-46365f745eac.png" alt="Logo" width="150" height="80">
+    <img src="https://user-images.githubusercontent.com/89405673/212366657-6d1ab2de-1c02-4050-9c6d-46365f745eac.png" alt="Logo" width="220" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
