@@ -15,8 +15,8 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="" alt="Logo" width="80" height="80">
+  <a href="#">
+    <img src="https://user-images.githubusercontent.com/89405673/212366657-6d1ab2de-1c02-4050-9c6d-46365f745eac.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
@@ -256,6 +256,16 @@ Use this space to list resources you find helpful and would like to give credit 
 - 📫 if you are looking to get in touch with me **ismailbenalla52@gmail.com**
 
 - 📄 Who am I ? [resume link here ismail](resume link here ismail)
+
+
+## About Me 🚀
+🎓 I’m ismail ben alla a computer science student at ensa fes, i am really into 3d animations and dynamic content in web development,
+and i am possessed by AI, ML, DL and how they work, i am a beginner in mobile development as well. </br>
+⛵ AI enthusiast | Contributor at [Jeef] official website()</br>
+✅ optimist and hardworker </br>
+🌱 Learning advanced computer science technologies</br>
+😄 I LOVE WHAT I AM DOING</br>
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
