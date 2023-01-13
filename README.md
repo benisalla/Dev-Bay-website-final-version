@@ -65,9 +65,13 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<div align="center">
-  <img  width="400" alt="web_page_part_1" src="https://user-images.githubusercontent.com/89405673/212377113-ec71f27b-79e1-4b58-8108-b9e01acfe83b.png">
-</div>
+
+<table align="center">
+  <tr>
+    <td valign="top"><img  width="400" alt="web_page_part_1" src="https://user-images.githubusercontent.com/89405673/212377113-ec71f27b-79e1-4b58-8108-b9e01acfe83b.png"></td>
+    <td valign="top"><img width="318" alt="web_page_part_2" src="https://user-images.githubusercontent.com/89405673/212378024-b4e6db70-c8c4-4605-90e9-ed2a4beb8ef7.png"></td>
+  </tr>
+</table>
 
 
 We completed our initial internship at an IT start-up dev-bay which takes its place at ‘CENTRE DES TRÈS PETITES ENTREPRISES SOLIDAIRES’ in Fez. DEV-BAY seeks good recognition and the client's interest. In fact, the company has updated its official website to emphasize more on the descriptions of the services it offers, including network security, website development, mobile application development, software maintenance, and SEO optimization as well.
