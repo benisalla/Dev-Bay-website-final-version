@@ -65,8 +65,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<div align="center">
+  <img  width="400" alt="web_page_part_1" src="https://user-images.githubusercontent.com/89405673/212377113-ec71f27b-79e1-4b58-8108-b9e01acfe83b.png">
+</div>
 
-<img align="center" width="400" alt="web_page_part_1" src="https://user-images.githubusercontent.com/89405673/212377113-ec71f27b-79e1-4b58-8108-b9e01acfe83b.png">
 
 We completed our initial internship at an IT start-up dev-bay which takes its place at ‘CENTRE DES TRÈS PETITES ENTREPRISES SOLIDAIRES’ in Fez. DEV-BAY seeks good recognition and the client's interest. In fact, the company has updated its official website to emphasize more on the descriptions of the services it offers, including network security, website development, mobile application development, software maintenance, and SEO optimization as well.
 Due to the health crisis [covid-19], the CEO has chosen to suspend the company's operations. After pausing for two years, he made the decision to resume work by establishing a new version of his company’s official website with a more flexible management system and a platform that will provide a large area for information exchange.
