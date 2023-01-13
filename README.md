@@ -69,7 +69,7 @@
 <table align="center">
   <tr>
     <td valign="top"><img  width="400" alt="web_page_part_1" src="https://user-images.githubusercontent.com/89405673/212377113-ec71f27b-79e1-4b58-8108-b9e01acfe83b.png"></td>
-    <td valign="top"><img width="318" alt="web_page_part_2" src="https://user-images.githubusercontent.com/89405673/212378024-b4e6db70-c8c4-4605-90e9-ed2a4beb8ef7.png"></td>
+    <td valign="top"><img width="400" alt="web_page_part_2" src="https://user-images.githubusercontent.com/89405673/212378024-b4e6db70-c8c4-4605-90e9-ed2a4beb8ef7.png"></td>
   </tr>
 </table>
 
