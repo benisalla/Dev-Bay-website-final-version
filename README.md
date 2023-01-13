@@ -19,7 +19,7 @@
     <img src="https://user-images.githubusercontent.com/89405673/212366657-6d1ab2de-1c02-4050-9c6d-46365f745eac.png" alt="Logo" width="220" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Dev-Bay company</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
