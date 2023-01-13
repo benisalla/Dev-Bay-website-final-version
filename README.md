@@ -15,7 +15,7 @@
 
 <br />
 <div align="center">
-  <a href="#">
+  <a href="#" style="background-color: white">
     <img src="https://user-images.githubusercontent.com/89405673/212366657-6d1ab2de-1c02-4050-9c6d-46365f745eac.png" alt="Logo" width="220" height="80">
   </a>
 
