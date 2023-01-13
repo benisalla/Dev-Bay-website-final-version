@@ -226,7 +226,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-url]: https://github.com/benisalla/Dev-Bay-website-final-version/edit/master/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://www.linkedin.com/in/ismail-ben-alla-7144b5221/
 
 
 [php-url]:https://img.shields.io/badge/php-347?style=for-the-badge&logo=php&logoColor=8993be
