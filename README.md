@@ -1,3 +1,4 @@
+## Readme
 <h1 align="center">Hi 👋🖐, I'm Ben Alla Ismail</h1>
 <h3 align="center">My first fully completed internship application at Dev-bay</h3>
 
@@ -62,7 +63,6 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <table align="center">
@@ -78,7 +78,7 @@ Due to the health crisis [covid-19], the CEO has chosen to suspend the company's
 Inside dev-bay company, our role was very similar to that of a project manager, where we worked on the conceptualization, design, and development of its official website and platform during the internship.
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 
 ### Built With
@@ -93,7 +93,7 @@ These are some of the technologies that were used to create this application.
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
  
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 
 
@@ -129,7 +129,7 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 
 
@@ -140,33 +140,39 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
+
+## login logout demo
 
 
 
-<!-- ROADMAP -->
+## Main Page demo
+
+
+
+
+## Dashboard demo
+
+
+
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+![dev-bay-structure](https://user-images.githubusercontent.com/89405673/212477501-a7a1b725-bc0e-463b-af47-ec9551589791.png)
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Uml Diagrams
 
+![image](https://user-images.githubusercontent.com/89405673/212478722-c99e9f2b-0b94-4edb-a30e-72df2f9d87ea.png)
 
+![image](https://user-images.githubusercontent.com/89405673/212478760-5bafe51e-a3ca-4c1a-9fdf-8185cbe1b3db.png)
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such a wonderful place to learn, be inspired, and create. Your contributions are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have an idea for how to improve this, please fork the repository and submit a pull request.
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
@@ -175,16 +181,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 
 
@@ -196,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Visit Our Project: [dev-bay.com](https://dev-bay.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 
 
@@ -212,7 +209,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [Bootstrap](https://getbootstrap.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/benisalla/Dev-Bay-website-final-version.svg?style=for-the-badge
 [contributors-url]: https://github.com/benisalla/Dev-Bay-website-final-version
@@ -258,7 +255,7 @@ Use this space to list resources you find helpful and would like to give credit 
 - 📫 if you are looking to get in touch with me **ismailbenalla52@gmail.com**
 
 - 📄 Who am I ? [resume link here ismail](https://resume-link-here)
-
+<p align="right">(<a href="#readme">back to top</a>)</p>
 
 ## About Me 🚀
 🎓 I’m ismail ben alla a computer science student at ensa fes, i am really into 3d animations and dynamic content in web development,
@@ -275,3 +272,4 @@ and i am possessed by AI, ML, DL and how they work, i am a beginner in mobile de
 <a href="https://linkedin.com/in/ismail-ben-alla-7144b5221/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ismail-ben-alla-7144b5221/" height="30" width="40" /></a>
 <a href="https://instagram.com/ismail_ben_alla" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ismail_ben_alla" height="30" width="40" /></a>
 </p>
+<p align="right">(<a href="#readme">back to top</a>)</p>
