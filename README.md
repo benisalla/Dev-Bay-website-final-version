@@ -5,11 +5,6 @@
 
 <p align="left"> <a href="https://twitter.com/ismail_ben_alla" target="blank"><img src="https://img.shields.io/twitter/follow/ismail_ben_alla?logo=twitter&style=for-the-badge" alt="ismail_ben_alla" /></a> </p>
 
-
-
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -22,16 +17,16 @@
   <h3 align="center">Dev-Bay company</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    This website was created to provide general information about dev-bay services and how they can benefit IT businesses.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo in Linked-in</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="mailto:dev-bay-dev@gmail.com">Report an issue</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="mailto:dev-bay-dev@gmail.com">Request A service</a>
   </p>
 </div>
 
@@ -44,7 +39,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Why this project</a></li>
+        <li><a href="#Techs-Used">Techs Used</a></li>
       </ul>
     </li>
     <li>
@@ -54,9 +50,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#login-logout">Login-logout demo</a></li>
+    <li><a href="#main-page">Main Page demo</a></li>
+    <li><a href="#dashboard">Dashboard demo</a></li>
+    <li><a href="#road-map">Road-map</a></li>
+    <li><a href="#diagrams">Uml Diagrams</a></li>
+    <li><a href="#about">About me</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
