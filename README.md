@@ -191,27 +191,26 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+ - <a href="mailto:ismailbenalla52@gmail.com">ismailbenalla52@gmail.com</a> 
+ - <a href="mailto:ismailbenalla787@gmail.com">ismailbenalla787@gmail.com</a> 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Visit Our Project: [dev-bay.com](https://dev-bay.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
+* [Mockaroo](https://www.mockaroo.com/)
+* [Canva](https://www.canva.com/)
+* [Tidio](https://www.tidio.com/)
+* [Bootstrap Templates](https://themes.getbootstrap.com/)
+* [GitHub](https://github.com/)
 * [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Bootstrap](https://getbootstrap.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,7 +257,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 - 📫 if you are looking to get in touch with me **ismailbenalla52@gmail.com**
 
-- 📄 Who am I ? [resume link here ismail](resume link here ismail)
+- 📄 Who am I ? [resume link here ismail](https://resume-link-here)
 
 
 ## About Me 🚀
@@ -271,7 +270,7 @@ and i am possessed by AI, ML, DL and how they work, i am a beginner in mobile de
 
 
 <h3 align="left">Connect with me:</h3>
-<p align="left">
+<p align="center">
 <a href="https://twitter.com/ismail_ben_alla" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="ismail_ben_alla" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/ismail-ben-alla-7144b5221/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ismail-ben-alla-7144b5221/" height="30" width="40" /></a>
 <a href="https://instagram.com/ismail_ben_alla" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ismail_ben_alla" height="30" width="40" /></a>
