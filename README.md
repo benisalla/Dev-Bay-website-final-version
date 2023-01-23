@@ -45,10 +45,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#how-to-use-it">How to Use it</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#how-to-launch-it">how to launch it</a></li>
       </ul>
     </li>
     <li><a href="#login-logout-demo">Login logout demo</a></li>
@@ -98,64 +98,40 @@ These are some of the technologies that were used to create this application.
 <p align="right"><a href="#readme">🔺</a></p>
 
 
+## How to Use it
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you want to learn from the structure or design of this application, you can find instructions on how to use it down below.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You will find a list of tools and tricks to help you get started with this app and customize it to your needs.
+* workbench or xampp
+* install php 8 in your computer
+  * [here](https://google.com) is how to install php 8 in your machine
 
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right"><a href="#readme">🔺</a></p>
+### How to launch it
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+* in my case i am using xampp, so just put a simple php file in htdocs and run the following command from your VS ide:
+			  ```php -S localhost:port```
+* otherwise just run in cmd or any cli :
+			  ```php -S localhost:port -t path-to-your-folder/```
 
 <p align="right"><a href="#readme">🔺</a></p>
 
 ## Login logout demo
+https://user-images.githubusercontent.com/89405673/214037926-4bbd1568-c402-4879-aa27-80dc1dc89fd1.mp4
 
-
+https://user-images.githubusercontent.com/89405673/214038334-16450ae0-fc0a-4989-8b39-349caa88a042.mp4
 
 ## Main Page demo
 
-
+https://user-images.githubusercontent.com/89405673/214030146-52ec62bb-6582-4fd9-9a65-0f8ac95b5431.mp4
 
 
 ## Dashboard demo
 
-
+https://user-images.githubusercontent.com/89405673/214036754-e8abf17e-39ba-4a04-ad44-19fbaf377043.mp4
 
 ## App Map
 
