@@ -40,8 +40,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Why this project</a></li>
-        <li><a href="#Techs-Used">Techs Used</a></li>
+        <li><a href="#why-this-Project">Why this project</a></li>
+        <li><a href="#Techs-used">Techs Used</a></li>
       </ul>
     </li>
     <li>
@@ -51,12 +51,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#login-logout">Login-logout demo</a></li>
-    <li><a href="#main-page">Main Page demo</a></li>
-    <li><a href="#dashboard">Dashboard demo</a></li>
-    <li><a href="#road-map">Road-map</a></li>
-    <li><a href="#diagrams">Uml Diagrams</a></li>
-    <li><a href="#about">About me</a></li>
+    <li><a href="#login-logout-demo">Login logout demo</a></li>
+    <li><a href="#main-page-demo">Main Page demo</a></li>
+    <li><a href="#dashboard-demo">Dashboard demo</a></li>
+    <li><a href="#app-map">App Map</a></li>
+    <li><a href="#uml-diagrams">Uml Diagrams</a></li>
+    <li><a href="#about-me">About me</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -64,6 +64,8 @@
 
 
 ## About The Project
+
+<h3 id='why-this-Project'> why this Project</h1>
 
 <table align="center">
   <tr>
@@ -78,10 +80,10 @@ Due to the health crisis [covid-19], the CEO has chosen to suspend the company's
 Inside dev-bay company, our role was very similar to that of a project manager, where we worked on the conceptualization, design, and development of its official website and platform during the internship.
 
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 
-### Built With
+<h3 id='Techs-used'>Techs used in this project</h1>
 
 These are some of the technologies that were used to create this application.
 
@@ -93,7 +95,7 @@ These are some of the technologies that were used to create this application.
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
  
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 
 
@@ -129,7 +131,7 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 
 
@@ -140,9 +142,9 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
-## login logout demo
+## Login logout demo
 
 
 
@@ -155,18 +157,18 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-## Roadmap
+## App Map
 
 ![dev-bay-structure](https://user-images.githubusercontent.com/89405673/212477501-a7a1b725-bc0e-463b-af47-ec9551589791.png)
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 ## Uml Diagrams
 
 ![image](https://user-images.githubusercontent.com/89405673/212478722-c99e9f2b-0b94-4edb-a30e-72df2f9d87ea.png)
 
 ![image](https://user-images.githubusercontent.com/89405673/212478760-5bafe51e-a3ca-4c1a-9fdf-8185cbe1b3db.png)
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 ## Contributing
 
@@ -181,7 +183,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 
 
@@ -193,7 +195,7 @@ Don't forget to give the project a star! Thanks again!
 
 Visit Our Project: [dev-bay.com](https://dev-bay.com)
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
 
 
@@ -209,8 +211,8 @@ Use this space to list resources you find helpful and would like to give credit 
 * [Font Awesome](https://fontawesome.com)
 * [Bootstrap](https://getbootstrap.com/)
 
-<p align="right">(<a href="#readme">back to top</a>)</p>
-
+<p align="right"><a href="#readme">🔺</a></p>
+<hr/>
 [contributors-shield]: https://img.shields.io/github/contributors/benisalla/Dev-Bay-website-final-version.svg?style=for-the-badge
 [contributors-url]: https://github.com/benisalla/Dev-Bay-website-final-version
 
@@ -255,9 +257,9 @@ Use this space to list resources you find helpful and would like to give credit 
 - 📫 if you are looking to get in touch with me **ismailbenalla52@gmail.com**
 
 - 📄 Who am I ? [resume link here ismail](https://resume-link-here)
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
 
-## About Me 🚀
+## About Me
 🎓 I’m ismail ben alla a computer science student at ensa fes, i am really into 3d animations and dynamic content in web development,
 and i am possessed by AI, ML, DL and how they work, i am a beginner in mobile development as well. </br>
 ⛵ AI enthusiast | Contributor at [Jeef] official website()</br>
@@ -265,11 +267,11 @@ and i am possessed by AI, ML, DL and how they work, i am a beginner in mobile de
 🌱 Learning advanced computer science technologies</br>
 😄 I LOVE WHAT I AM DOING</br>
 
-
+<hr/>
 <h3 align="left">Connect with me:</h3>
 <p align="center">
 <a href="https://twitter.com/ismail_ben_alla" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="ismail_ben_alla" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/ismail-ben-alla-7144b5221/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="ismail-ben-alla-7144b5221/" height="30" width="40" /></a>
 <a href="https://instagram.com/ismail_ben_alla" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="ismail_ben_alla" height="30" width="40" /></a>
 </p>
-<p align="right">(<a href="#readme">back to top</a>)</p>
+<p align="right"><a href="#readme">🔺</a></p>
